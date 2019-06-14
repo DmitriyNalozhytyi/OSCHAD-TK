@@ -25,15 +25,19 @@ public class OpenQuestionCardTest extends ParentTest {
         questionPage.enterTextInToFieldReportTime("60");
         questionPage.enterTextInToFieldDraftDecision("проект решения...");
         questionPage.clickOnButtonSaveQuestionCard();
-        questionPage.clickOnButtonStartWorkflow();
-       // questionPage.clickOnStartFlowButton();
+        questionPage.clickOnButtonStartWorkflowInNewFrame();
+        questionPage.clickOnButtonCreateStep();
+        questionPage.enterTextInToFieldNumberStepInNewFrame("1");
+        questionPage.enterTextInToFieldExecutor("Марк Леон");
+        questionPage.enterTextInToFieldTermTask("1");
+        questionPage.clickOnButtonCreate1StStep();
+
 
      //   checkExpectedResult(
        //         "StartFlow button is not present",
-       //         questionPage.isStartFlowButtonPresent()
-       // );
-        //test
-//r
+        //        questionPage.isStartFlowButtonPresent()
+        //);
+
 
 
     }
