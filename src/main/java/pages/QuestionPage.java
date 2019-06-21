@@ -1,7 +1,6 @@
 package pages;
 
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -64,6 +63,12 @@ public class QuestionPage extends ParentPage {
 
     @FindBy(id = "ctl00_ctl43_g_a88f2c3d_16fb_4e2e_a94a_33b2b355870c_ctl00_toolBarTbl_RightRptControls_ctl00_ctl00_diidIOSaveItem")
     private  WebElement buttonCreate1StStep;
+
+    @FindBy(id = "LSCMTStagesExType_051b2411-8af1-4486-b0e7-7cb00ca7fec5_$RadioButtonChoiceField2")
+    private WebElement checkBoxSecretary;
+
+    @FindBy(id="startRoute")
+    private WebElement buttonStartRoute;
 
 
     // creating question card:
@@ -131,6 +136,7 @@ public class QuestionPage extends ParentPage {
 
         public void clickOnButtonStartWorkflowInNewFrame() {
         actionsWithOurElements.changeFrameWithWait(buttonStartWorkFlow);
+        actionsWithOurElements.clickOnElement(buttonStartWorkFlow);
     }
 
 
@@ -149,6 +155,7 @@ public class QuestionPage extends ParentPage {
 
     public void clickOnButtonCreateStep() {
         actionsWithOurElements.changeFrameWithWait(buttonCreateStep);
+        actionsWithOurElements.clickOnElement(buttonCreateStep);
     }
 
     public void enterTextInToFieldNumberStepInNewFrame(String fieldText) {
@@ -166,6 +173,16 @@ public class QuestionPage extends ParentPage {
 
     public void clickOnButtonCreate1StStep() {
         actionsWithOurElements.clickOnElement(buttonCreate1StStep);
+    }
+
+    public void chooseRadioButtonSecretary() {
+        actionsWithOurElements.clickOnElement(checkBoxSecretary);
+    }
+
+    public void clickOnButtonStartRoute() {
+        actionsWithOurElements.changeFrameWithWait(buttonStartRoute);
+        actionsWithOurElements.clickOnElement(buttonStartRoute);
+      //  actionsWithOurElements.clickOnElement(buttonStartRoute);
     }
 }
 
