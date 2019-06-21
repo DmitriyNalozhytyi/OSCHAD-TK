@@ -25,12 +25,24 @@ public class OpenQuestionCardTest extends ParentTest {
         questionPage.enterTextInToFieldReportTime("60");
         questionPage.enterTextInToFieldDraftDecision("проект решения...");
         questionPage.clickOnButtonSaveQuestionCard();
+        //question card is created
         questionPage.clickOnButtonStartWorkflowInNewFrame();
+        // open form to create steps
         questionPage.clickOnButtonCreateStep();
         questionPage.enterTextInToFieldNumberStepInNewFrame("1");
         questionPage.enterTextInToFieldExecutor("Марк Леон");
         questionPage.enterTextInToFieldTermTask("1");
         questionPage.clickOnButtonCreate1StStep();
+        // created 1st step (people picker)
+        questionPage.clickOnButtonCreateStep();
+        questionPage.enterTextInToFieldNumberStepInNewFrame("2");
+        questionPage.chooseRadioButtonSecretary();
+        questionPage.enterTextInToFieldTermTask("2");
+        questionPage.clickOnButtonCreate1StStep();
+        // created all steps
+        questionPage.clickOnButtonStartRoute();
+
+
 
 
      //   checkExpectedResult(

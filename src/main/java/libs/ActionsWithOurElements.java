@@ -51,7 +51,7 @@ public class ActionsWithOurElements {
             Thread.sleep(7000);
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
             Thread.sleep(7000);
-            element.click();
+         //   element.click();
             System.out.println("Frame was changed");
         }catch (Exception e) {
             System.out.println("Can't change frame");
