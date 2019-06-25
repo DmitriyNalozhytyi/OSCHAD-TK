@@ -70,6 +70,9 @@ public class QuestionPage extends ParentPage {
     @FindBy(id="startRoute")
     private WebElement buttonStartRoute;
 
+    @FindBy (className ="ms-dlgCloseBtn")
+    private WebElement closeFormWithSteps;
+
 
     // creating question card:
 
@@ -182,7 +185,12 @@ public class QuestionPage extends ParentPage {
     public void clickOnButtonStartRoute() {
         actionsWithOurElements.changeFrameWithWait(buttonStartRoute);
         actionsWithOurElements.clickOnElement(buttonStartRoute);
-      //  actionsWithOurElements.clickOnElement(buttonStartRoute);
+       }
+
+    public void closeFormWithSteps() {
+        actionsWithOurElements.quiteFromAllFrames(closeFormWithSteps);
+        actionsWithOurElements.clickOnLastElement();
+      //  actionsWithOurElements.clickOnElement(closeFormWithSteps);
     }
 }
 
