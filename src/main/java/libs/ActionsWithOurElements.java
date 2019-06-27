@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class ActionsWithOurElements {
     WebDriver webDriver;
 
@@ -59,6 +61,18 @@ public class ActionsWithOurElements {
         }
     }
 
+    public void quiteFromAllFrames(WebElement element) {
+        try {
+            Thread.sleep(7000);
+            webDriver.switchTo().defaultContent();
+            Thread.sleep(7000);
+            System.out.println("quite from All Frames");
+        }catch (Exception e) {
+            System.out.println("Can't change frame");
+            printErrorAndStopTest(e);
+        }
+    }
+
     public void enterTextInToPeopePickerFieldUsingEnter(WebElement element, String text) {
         try {
             element.sendKeys(text);
@@ -82,8 +96,23 @@ public class ActionsWithOurElements {
             printErrorAndStopTest(e);
         }
     }
+
+    public void clickOnLastElement() {
+        try {
+            List<WebElement> closeButtons = webDriver.findElements(By.className("ms-dlgCloseBtn"));
+
+            System.out.println(closeButtons.size() + " - number of same elements");
+            if(closeButtons.size() > 0) {
+                closeButtons.get(closeButtons.size()-1).click();
+                System.out.println("CloseButton was clicked");
+            }else{
+                System.out.println("!!! number of same elements '0'!!! ");
+            }
+            }catch (Exception e) {
+                System.out.println("Can't enter text in to fieldExecutor" + e);
+                printErrorAndStopTest(e);
+            }
+    }
 }
-
-
 
 
