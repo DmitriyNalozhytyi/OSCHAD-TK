@@ -53,9 +53,6 @@ public class OpenQuestionCardTest extends ParentTest {
 
 
 
-
-
-
      //   checkExpectedResult(
        //         "StartFlow button is not present",
         //        questionPage.isStartFlowButtonPresent()
