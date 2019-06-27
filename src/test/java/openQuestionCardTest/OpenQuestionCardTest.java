@@ -47,6 +47,10 @@ public class OpenQuestionCardTest extends ParentTest {
         questionPage.clickOn1stTaskQuestion();
         questionPage.enterTextInToFieldCommQuestionTask("dfgdfgdfgd");
         questionPage.clickOnButtonAggreeOnTaskForm();
+        questionPage.clickOnSecretaryTaskQuestion();
+        questionPage.enterTextInToFieldCommQuestionTask("GGGGGGGG");
+        questionPage.clickOnButtonAggreeOnTaskForm();
+
 
 
 

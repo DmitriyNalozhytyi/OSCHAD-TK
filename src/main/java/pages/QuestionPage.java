@@ -91,6 +91,9 @@ public class QuestionPage extends ParentPage {
    @FindBy(id = "lsrte_LSCMTComments_ifr")
     private WebElement commFieldQuestTask;
 
+   @FindBy (className = "ls-tasks-link")
+   private WebElement secretaryQuestionTask;
+
 
 
     // creating question card:
@@ -252,6 +255,10 @@ public class QuestionPage extends ParentPage {
     }
 
 
+    public void clickOnSecretaryTaskQuestion() {
+        actionsWithOurElements.changeFrameWithWait(secretaryQuestionTask);
+        actionsWithOurElements.clickOnElement(secretaryQuestionTask);
+    }
 }
 
 
