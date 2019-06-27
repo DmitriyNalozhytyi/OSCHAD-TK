@@ -73,11 +73,6 @@ public class ActionsWithOurElements {
         }
     }
 
-
-
-
-
-
     public void enterTextInToPeopePickerFieldUsingEnter(WebElement element, String text) {
         try {
             element.sendKeys(text);
@@ -106,35 +101,18 @@ public class ActionsWithOurElements {
         try {
             List<WebElement> closeButtons = webDriver.findElements(By.className("ms-dlgCloseBtn"));
 
-            System.out.println(closeButtons.size() + " - кол-во");
+            System.out.println(closeButtons.size() + " - number of same elements");
             if(closeButtons.size() > 0) {
                 closeButtons.get(closeButtons.size()-1).click();
+                System.out.println("CloseButton was clicked");
             }else{
-                System.out.println("!!! - кол-во");
+                System.out.println("!!! number of same elements '0'!!! ");
             }
-           //     printErrorAndStopTest(e);
-            //Thread.sleep(7000);
-
-
-         //   webDriver.findElement(By.xpath("(.//*[@class = 'ms-dlgCloseBtn'])[1]")).click();
-
-            //webDriver.findElement(By.xpath("(.//*[@class = 'ms-dlgCloseBtn'])[1]")).click();
-
-
-            System.out.println("First Frame was open");
-        }catch (Exception e) {
+            }catch (Exception e) {
                 System.out.println("Can't enter text in to fieldExecutor" + e);
                 printErrorAndStopTest(e);
             }
-
-
-        //   webDriver.findElement(By.xpath("(.//*[@class = 'ms-dlgCloseBtn'])[1]")).click();
-        // element.findElement(By.xpath(".//*[@class = 'ms-dlgCloseBtn']"));
-
-       // element.click();
     }
 }
 
-
-//    @FindBy(xpath = ".//*[@id='createNewItem']") ["ms-dlgCloseBtn"]  By.className("ms-dlgCloseBtn").size()-1).
 

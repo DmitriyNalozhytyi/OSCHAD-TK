@@ -4,8 +4,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class QuestionPage extends ParentPage {
     public QuestionPage(WebDriver webDriver) {
@@ -70,8 +73,24 @@ public class QuestionPage extends ParentPage {
     @FindBy(id="startRoute")
     private WebElement buttonStartRoute;
 
-    @FindBy (className ="ms-dlgCloseBtn")
+    @FindBy (className ="lsrte_LSCMTComments_ifr")
     private WebElement closeFormWithSteps;
+
+ //   @FindBy (xpath = "//*[@class = 'ls-tab active-tab']")
+  //  private WebElement tabTasksOnQuestionCard;
+
+    @FindBy (className ="info-counter")
+    private WebElement tabTasksOnQuestionCard;
+
+    @FindBy (className = "ls-tasks-link")
+    private WebElement firstQuestionTask;
+
+    @FindBy (className = "ls-tasks-buttons")
+    private WebElement buttonAgreeTaskForm;
+
+   @FindBy(id = "lsrte_LSCMTComments_ifr")
+    private WebElement commFieldQuestTask;
+
 
 
     // creating question card:
@@ -190,8 +209,49 @@ public class QuestionPage extends ParentPage {
     public void closeFormWithSteps() {
         actionsWithOurElements.quiteFromAllFrames(closeFormWithSteps);
         actionsWithOurElements.clickOnLastElement();
-      //  actionsWithOurElements.clickOnElement(closeFormWithSteps);
+
     }
+
+    public void openTasksOnQuestionCard() {
+        actionsWithOurElements.changeFrameWithWait(tabTasksOnQuestionCard);
+        actionsWithOurElements.clickOnElement(tabTasksOnQuestionCard);
+
+    }
+
+    public void clickOn1stTaskQuestion() {
+        actionsWithOurElements.clickOnElement(firstQuestionTask);
+    }
+
+    public void enterTextInToFieldCommQuestionTask(String fieldText) {
+        actionsWithOurElements.changeFrameWithWait(commFieldQuestTask);
+        actionsWithOurElements.enterTextInToElement(commFieldQuestTask, fieldText);
+    }
+
+    public void clickOnButtonAggreeOnTaskForm() {
+       // actionsWithOurElements.changeFrameWithWait(buttonAgreeTaskForm);
+
+
+
+          //  try {
+                List<WebElement> actionButtons = webDriver.findElements(By.className("ls-tasks-buttons"));
+
+                System.out.println(actionButtons.size() + " - number of same elements");
+                if(actionButtons.size() > 0) {
+                    actionButtons.get(actionButtons.size()-4).click();
+                    System.out.println("actionButtons was clicked");
+                }else{
+                    System.out.println("!!! number of same elements '0'!!! ");
+                }
+       // }
+
+
+
+
+
+
+    }
+
+
 }
 
 

@@ -43,6 +43,11 @@ public class OpenQuestionCardTest extends ParentTest {
         questionPage.clickOnButtonStartRoute();
         // WorkFlow Started
         questionPage.closeFormWithSteps();
+        questionPage.openTasksOnQuestionCard();
+        questionPage.clickOn1stTaskQuestion();
+        questionPage.enterTextInToFieldCommQuestionTask("dfgdfgdfgd");
+        questionPage.clickOnButtonAggreeOnTaskForm();
+
 
 
 
