@@ -5,8 +5,6 @@ package openQuestionCardTest;
 
 public class OpenQuestionCardTest extends ParentTest {
 
-
-
     @Test
     public void clickOnCreateQuestionButton(){
         //preConditions
@@ -50,8 +48,6 @@ public class OpenQuestionCardTest extends ParentTest {
         questionPage.clickOnSecretaryTaskQuestion();
         questionPage.enterTextInToFieldCommQuestionTask("GGGGGGGG");
         questionPage.clickOnButtonAggreeOnTaskForm();
-
-
 
      //   checkExpectedResult(
        //         "StartFlow button is not present",
