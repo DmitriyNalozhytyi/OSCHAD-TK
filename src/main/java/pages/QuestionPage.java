@@ -154,7 +154,6 @@ public class QuestionPage extends ParentPage {
     }
 
     // question card created and save
-
     // starting WorkFlow:
 
         public void clickOnButtonStartWorkflowInNewFrame() {
