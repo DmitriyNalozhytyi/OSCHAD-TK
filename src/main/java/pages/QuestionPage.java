@@ -88,13 +88,11 @@ public class QuestionPage extends ParentPage {
     @FindBy (className = "ls-tasks-buttons")
     private WebElement buttonAgreeTaskForm;
 
-   @FindBy(id = "lsrte_LSCMTComments_ifr")
+    @FindBy(id = "lsrte_LSCMTComments_ifr")
     private WebElement commFieldQuestTask;
 
-   @FindBy (className = "ls-tasks-link")
-   private WebElement secretaryQuestionTask;
-
-
+    @FindBy (className = "ls-tasks-link")
+    private WebElement secretaryQuestionTask;
 
     // creating question card:
 
@@ -156,7 +154,6 @@ public class QuestionPage extends ParentPage {
     }
 
     // question card created and save
-
     // starting WorkFlow:
 
         public void clickOnButtonStartWorkflowInNewFrame() {
@@ -212,13 +209,11 @@ public class QuestionPage extends ParentPage {
     public void closeFormWithSteps() {
         actionsWithOurElements.quiteFromAllFrames(closeFormWithSteps);
         actionsWithOurElements.clickOnLastElement();
-
     }
 
     public void openTasksOnQuestionCard() {
         actionsWithOurElements.changeFrameWithWait(tabTasksOnQuestionCard);
         actionsWithOurElements.clickOnElement(tabTasksOnQuestionCard);
-
     }
 
     public void clickOn1stTaskQuestion() {
@@ -231,11 +226,6 @@ public class QuestionPage extends ParentPage {
     }
 
     public void clickOnButtonAggreeOnTaskForm() {
-       // actionsWithOurElements.changeFrameWithWait(buttonAgreeTaskForm);
-
-
-
-          //  try {
                 List<WebElement> actionButtons = webDriver.findElements(By.className("ls-tasks-buttons"));
 
                 System.out.println(actionButtons.size() + " - number of same elements");
@@ -245,20 +235,13 @@ public class QuestionPage extends ParentPage {
                 }else{
                     System.out.println("!!! number of same elements '0'!!! ");
                 }
-       // }
-
-
-
-
-
-
     }
-
 
     public void clickOnSecretaryTaskQuestion() {
         actionsWithOurElements.changeFrameWithWait(secretaryQuestionTask);
         actionsWithOurElements.clickOnElement(secretaryQuestionTask);
     }
+
 }
 
 

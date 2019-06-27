@@ -10,22 +10,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.ChooseCommitteesPage;
 import pages.QuestionPage;
-
 import java.io.File;
 import java.util.concurrent.TimeUnit;
-
-
 
 public class ParentTest {
     WebDriver webDriver;
     protected ChooseCommitteesPage chooseCommitteesPage;
     protected QuestionPage questionPage;
-
-
-
-
-
-
 
     @Before
     public void setUp(){
@@ -39,11 +30,7 @@ public class ParentTest {
 
         chooseCommitteesPage = new ChooseCommitteesPage(webDriver);
         questionPage = new QuestionPage(webDriver);
-
-
-
     }
-
     @After
     public void tearDown(){
         //webDriver.quit();
@@ -51,6 +38,4 @@ public class ParentTest {
    protected void checkExpectedResult(String message, boolean actualResult){
        Assert.assertEquals(message, true, actualResult);
    }
-
-
 }
