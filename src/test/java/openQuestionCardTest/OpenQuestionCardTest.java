@@ -48,6 +48,8 @@ public class OpenQuestionCardTest extends ParentTest {
         questionPage.clickOnSecretaryTaskQuestion();
         questionPage.enterTextInToFieldCommQuestionTask("GGGGGGGG");
         questionPage.clickOnButtonAggreeOnTaskForm();
+        questionPage.closeQuestionCard();
+
 
      //   checkExpectedResult(
        //         "StartFlow button is not present",
