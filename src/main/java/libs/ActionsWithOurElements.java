@@ -1,5 +1,7 @@
 package libs;
 
+
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -14,6 +16,7 @@ import java.util.List;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
+    Logger logger = Logger.getLogger(getClass());
 
     public ActionsWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -25,7 +28,8 @@ public class ActionsWithOurElements {
     public void enterTextInToElement(WebElement element, String text) {
         try {
             element.sendKeys(text);
-            System.out.println(text + "was input into element");
+            logger.info(text + "was input into element");
+            //System.out.println(text + "was input into element");
         } catch (Exception e) {
             System.out.println("Can't enter text in to field" + e);
             printErrorAndStopTest(e);
@@ -33,14 +37,16 @@ public class ActionsWithOurElements {
     }
 
     private void printErrorAndStopTest(Exception e) {
-        System.out.println("Can't work with element" + e);
+        logger.info("Can't work with element" + e);
+        //System.out.println("Can't work with element" + e);
         Assert.fail("Can't work with element" + e);
     }
 
     public void clickOnElement(WebElement element) {
         try {
             element.click();
-            System.out.println(element + "Element was clicked");
+            logger.info("Element was clicked");
+            //System.out.println(element + "Element was clicked");
         } catch (Exception e) {
             System.out.println("Can't click on Element");
             printErrorAndStopTest(e);
@@ -54,7 +60,8 @@ public class ActionsWithOurElements {
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
             Thread.sleep(7000);
          //   element.click();
-            System.out.println("Frame was changed");
+            logger.info("Frame was changed");
+           // System.out.println("Frame was changed");
         }catch (Exception e) {
             System.out.println("Can't change frame");
             printErrorAndStopTest(e);
@@ -66,9 +73,11 @@ public class ActionsWithOurElements {
             Thread.sleep(7000);
             webDriver.switchTo().defaultContent();
             Thread.sleep(7000);
-            System.out.println("quite from All Frames");
+            logger.info("quite from All Frames");
+            //System.out.println("quite from All Frames");
         }catch (Exception e) {
-            System.out.println("Can't change frame");
+            logger.info("quite from All Frames");
+            //System.out.println("Can't change frame");
             printErrorAndStopTest(e);
         }
     }
@@ -79,9 +88,11 @@ public class ActionsWithOurElements {
             Thread.sleep(5000);
             element.sendKeys(Keys.ENTER);
             Thread.sleep(5000);
-            System.out.println(text + "was input into element");
+            logger.info(text + "was input into element");
+           // System.out.println(text + "was input into element");
         } catch (Exception e) {
-            System.out.println("Can't enter text in to fieldExecutor" + e);
+            logger.info("Can't enter text in to fieldExecutor" + e);
+            //System.out.println("Can't enter text in to fieldExecutor" + e);
             printErrorAndStopTest(e);
         }
 
@@ -89,10 +100,12 @@ public class ActionsWithOurElements {
     public void openFirstFrame (WebElement element) {
         try {
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
-            System.out.println("First Frame was open");
+            logger.info("First Frame was open");
+            //System.out.println("First Frame was open");
 
         }catch (Exception e) {
-            System.out.println("Can't change frame");
+            logger.info("Can't change frame");
+            //System.out.println("Can't change frame");
             printErrorAndStopTest(e);
         }
     }
@@ -101,15 +114,19 @@ public class ActionsWithOurElements {
         try {
             List<WebElement> closeButtons = webDriver.findElements(By.className("ms-dlgCloseBtn"));
 
-            System.out.println(closeButtons.size() + " - number of same elements");
+            logger.info(closeButtons.size() + " - number of same elements");
+            //System.out.println(closeButtons.size() + " - number of same elements");
             if(closeButtons.size() > 0) {
                 closeButtons.get(closeButtons.size()-1).click();
-                System.out.println("CloseButton was clicked");
+                logger.info("CloseButton was clicked");
+               // System.out.println("CloseButton was clicked");
             }else{
-                System.out.println("!!! number of same elements '0'!!! ");
+                logger.info("!!! number of same elements '0'!!! ");
+              //  System.out.println("!!! number of same elements '0'!!! ");
             }
             }catch (Exception e) {
-                System.out.println("Can't enter text in to fieldExecutor" + e);
+                logger.info("Can't enter text in to fieldExecutor" + e);
+               // System.out.println("Can't enter text in to fieldExecutor" + e);
                 printErrorAndStopTest(e);
             }
     }

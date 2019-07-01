@@ -1,19 +1,23 @@
 package pages;
 
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
+
 
 public class QuestionPage extends ParentPage {
     public QuestionPage(WebDriver webDriver) {
         super(webDriver);
     }
+
+
+
 
 
     @FindBy(xpath = ".//*[@id='createNewItem']")
@@ -95,6 +99,10 @@ public class QuestionPage extends ParentPage {
     private WebElement secretaryQuestionTask;
 
     // creating question card:
+
+    @FindBy (id= "seeSteps")
+    private WebElement lookAllSteps;
+
 
     public void clickOnButtonCreateQuestion() {
         actionsWithOurElements.clickOnElement(createQuestionCardButton);
@@ -231,9 +239,11 @@ public class QuestionPage extends ParentPage {
                 System.out.println(actionButtons.size() + " - number of same elements");
                 if(actionButtons.size() > 0) {
                     actionButtons.get(actionButtons.size()-4).click();
-                    System.out.println("actionButtons was clicked");
+                    logger.info("actionButtons was clicked");
+                   // System.out.println("actionButtons was clicked");
                 }else{
-                    System.out.println("!!! number of same elements '0'!!! ");
+                    logger.info("!!! number of same elements '0'!!! ");
+                    //System.out.println("!!! number of same elements '0'!!! ");
                 }
     }
 
@@ -242,6 +252,12 @@ public class QuestionPage extends ParentPage {
         actionsWithOurElements.clickOnElement(secretaryQuestionTask);
     }
 
+    public void closeQuestionCard() {
+       actionsWithOurElements.quiteFromAllFrames(lookAllSteps);
+       actionsWithOurElements.clickOnLastElement();
+
+
+    }
 }
 
 
