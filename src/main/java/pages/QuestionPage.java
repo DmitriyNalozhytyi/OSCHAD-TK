@@ -172,14 +172,20 @@ public class QuestionPage extends ParentPage {
 
     // ER:
 
-  //  public boolean isStartFlowButtonPresent() {
-  //      try {
-   //         Thread.sleep(10000);
-   //         return webDriver.findElement(By.id("sendForApproval")).isDisplayed();
-  //      } catch (Exception e) {
-  //          return false;
-  //      }
-  //  }
+    public boolean  isStartFlowButtonPresent() {
+        try {
+           Thread.sleep(10000);
+            System.out.println("reeeeeeeeee");
+            actionsWithOurElements.changeFrameWithWait(buttonStartWorkFlow);
+            return webDriver.findElement(By.id("sendForApproval")).isDisplayed();
+
+
+
+
+       } catch (Exception e) {
+            return false;
+        }
+    }
 
     // open new frame:
 

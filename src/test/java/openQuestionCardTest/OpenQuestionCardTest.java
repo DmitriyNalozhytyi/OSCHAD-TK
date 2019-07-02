@@ -51,6 +51,9 @@ public class OpenQuestionCardTest extends ParentTest {
         questionPage.closeQuestionCard();
 
 
+
+
+
      //   checkExpectedResult(
        //         "StartFlow button is not present",
         //        questionPage.isStartFlowButtonPresent()
@@ -58,5 +61,29 @@ public class OpenQuestionCardTest extends ParentTest {
 
 
 
+    }
+    @Test
+
+    public void checkFieldsQuestionCardForm() {
+
+        chooseCommitteesPage.openChooseCommitteesPageAfterAutorization();
+        chooseCommitteesPage.clickOnTK();
+        questionPage.clickOnButtonCreateQuestion();
+        //QuestionCard
+        questionPage.enterTextInToFieldTitle("New Question");
+        questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
+        questionPage.chooseValueAffilliationInDD();
+        questionPage.chooseValuePriorityInDD();
+        questionPage.chooseValueOrderMeetingInDD();
+        questionPage.enterTextInToFieldDesiredMeetingDate("11.10.2019");
+        questionPage.enterTextInToFieldPresenters("Марк Леон");
+        questionPage.enterTextInToFieldInvited("Стелла Орен");
+        questionPage.enterTextInToFieldReportTime("60");
+        questionPage.enterTextInToFieldDraftDecision("проект решения...");
+        questionPage.clickOnButtonSaveQuestionCard();
+        checkExpectedResult(
+                "StartWorkFlowButton is NOT present",
+                questionPage.isStartFlowButtonPresent()
+        );
     }
 }
