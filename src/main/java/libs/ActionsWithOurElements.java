@@ -130,6 +130,17 @@ public class ActionsWithOurElements {
                 printErrorAndStopTest(e);
             }
     }
+
+    public boolean isElementPresent(WebElement webElement){
+        try {
+            boolean isDisplayed = webElement.isDisplayed();
+            logger.info("Element is displayed -->" + isDisplayed);
+            return webElement.isDisplayed();
+        }catch (Exception e){
+            logger.info("Element is displayed --> false");
+            return false;
+        }
+    }
 }
 
 

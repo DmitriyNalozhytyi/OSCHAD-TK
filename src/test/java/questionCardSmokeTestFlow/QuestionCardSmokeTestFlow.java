@@ -1,9 +1,33 @@
-package openQuestionCardTest;
+package questionCardSmokeTestFlow;
 
         import org.junit.Test;
+        import org.junit.runner.RunWith;
+        import org.junit.runners.Parameterized;
         import parentTest.ParentTest;
 
-public class OpenQuestionCardTest extends ParentTest {
+        import java.util.Arrays;
+        import java.util.Collection;
+
+
+@RunWith(Parameterized.class)
+
+public class QuestionCardSmokeTestFlow extends ParentTest {
+
+    String titleField;
+    String shortContent;
+
+    public QuestionCardSmokeTestFlow(String titleField, String shortContent) {
+        this.titleField = titleField;
+        this.shortContent = shortContent;
+    }
+
+    @Parameterized.Parameters
+    public static Collection testData(){
+        return Arrays.asList(new Object[][]{
+                {"Sasha","Kooooo"},
+                {"Sasha2","Кооо2"}
+        });
+    }
 
     @Test
     public void clickOnCreateQuestionButton(){
@@ -12,8 +36,10 @@ public class OpenQuestionCardTest extends ParentTest {
         chooseCommitteesPage.clickOnTK();
         questionPage.clickOnButtonCreateQuestion();
         //QuestionCard
-        questionPage.enterTextInToFieldTitle("New Question");
-        questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
+      //  questionPage.enterTextInToFieldTitle("New Question");
+        questionPage.enterTextInToFieldTitle(titleField);
+       // questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
+        questionPage.enterTextInToFieldShortContent(shortContent);
         questionPage.chooseValueAffilliationInDD();
         questionPage.chooseValuePriorityInDD();
         questionPage.chooseValueOrderMeetingInDD();
@@ -62,28 +88,5 @@ public class OpenQuestionCardTest extends ParentTest {
 
 
     }
-    @Test
 
-    public void checkFieldsQuestionCardForm() {
-
-        chooseCommitteesPage.openChooseCommitteesPageAfterAutorization();
-        chooseCommitteesPage.clickOnTK();
-        questionPage.clickOnButtonCreateQuestion();
-        //QuestionCard
-        questionPage.enterTextInToFieldTitle("New Question");
-        questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
-        questionPage.chooseValueAffilliationInDD();
-        questionPage.chooseValuePriorityInDD();
-        questionPage.chooseValueOrderMeetingInDD();
-        questionPage.enterTextInToFieldDesiredMeetingDate("11.10.2019");
-        questionPage.enterTextInToFieldPresenters("Марк Леон");
-        questionPage.enterTextInToFieldInvited("Стелла Орен");
-        questionPage.enterTextInToFieldReportTime("60");
-        questionPage.enterTextInToFieldDraftDecision("проект решения...");
-        questionPage.clickOnButtonSaveQuestionCard();
-        checkExpectedResult(
-                "StartWorkFlowButton is NOT present",
-                questionPage.isStartFlowButtonPresent()
-        );
-    }
 }
