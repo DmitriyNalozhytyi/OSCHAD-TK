@@ -53,8 +53,8 @@ public class QuestionPage extends ParentPage {
     @FindBy(id = "lsrte_LSCMTDraftDecision_ifr")
     private WebElement fieldDraftDecision;
 
-    @FindBy(id = "sendForApproval")
-    private WebElement buttonStartWorkFlow;
+  //  @FindBy(id = "sendForApproval")
+  //  private WebElement buttonStartWorkFlow;
 
     @FindBy(id = "addNewStage")
     private  WebElement buttonCreateStep;
@@ -165,26 +165,33 @@ public class QuestionPage extends ParentPage {
     // starting WorkFlow:
 
         public void clickOnButtonStartWorkflowInNewFrame() {
-        actionsWithOurElements.changeFrameWithWait(buttonStartWorkFlow);
-        actionsWithOurElements.clickOnElement(buttonStartWorkFlow);
+        actionsWithOurElements.changeFrameWithWait(buttonStartFlow);
+        actionsWithOurElements.clickOnElement(buttonStartFlow);
     }
 //hgjgkjjkl
 
     // ER:
 
     public boolean  isStartFlowButtonPresent() {
-        try {
-           Thread.sleep(10000);
-            System.out.println("reeeeeeeeee");
-            actionsWithOurElements.changeFrameWithWait(buttonStartWorkFlow);
-            return webDriver.findElement(By.id("sendForApproval")).isDisplayed();
+        actionsWithOurElements.changeFrameWithWait(buttonStartFlow);
+        return actionsWithOurElements.isElementPresent(buttonStartFlow);
 
 
 
 
-       } catch (Exception e) {
-            return false;
-        }
+        //  try {
+        //   Thread.sleep(10000);
+          //  actionsWithOurElements.changeFrameWithWait(buttonStartWorkFlow);
+
+            //return webDriver.findElement(By.id("sendForApproval")).isDisplayed();
+
+
+
+
+
+      // } catch (Exception e) {
+        //    return false;
+       // }
     }
 
     // open new frame:
