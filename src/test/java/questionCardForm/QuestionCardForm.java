@@ -1,13 +1,18 @@
 package questionCardForm;
 
+import libs.ExcelDriver;
+import libs.SpreadsheetData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import parentTest.ParentTest;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
-
+import java.util.Map;
 
 @RunWith(Parameterized.class)
 
@@ -21,25 +26,24 @@ public class QuestionCardForm extends ParentTest {
         this.shortContent = shortContent;
     }
 
-    @Parameterized.Parameters
-    public static Collection testData(){
-        return Arrays.asList(new Object[][]{
-                {"Sasha"," Kooooo4545"},
-                {"Sasha2"," Кооо24545"}
-        });
+    @Parameterized.Parameters(name = "Parameters are {0} and {1}")
+    public static Collection testData() throws IOException {
+        InputStream spreadsheet
+                = new FileInputStream(configProperties.DATA_FILE_PATH()+"testDataSuit.xls");
+        return new SpreadsheetData(spreadsheet, "InvalidLogOn").getData();
     }
+
     @Test
 
-    public void checkFieldsQuestionCardForm() {
+    public void checkFieldsQuestionCardForm()  {
 
         chooseCommitteesPage.openChooseCommitteesPageAfterAutorization();
         chooseCommitteesPage.clickOnTK();
         questionPage.clickOnButtonCreateQuestion();
         //QuestionCard
-       // questionPage.enterTextInToFieldTitle("New Question");
-         questionPage.enterTextInToFieldTitle(titleField);
+        questionPage.enterTextInToFieldTitle(titleField);
        // questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
-          questionPage.enterTextInToFieldShortContent(shortContent);
+        questionPage.enterTextInToFieldShortContent(shortContent);
         questionPage.chooseValueAffilliationInDD();
         questionPage.chooseValuePriorityInDD();
         questionPage.chooseValueOrderMeetingInDD();
