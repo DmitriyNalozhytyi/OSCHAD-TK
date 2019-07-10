@@ -18,15 +18,31 @@ import java.util.Map;
 
 public class QuestionCardForm extends ParentTest {
 
-    String titleField;
+    String title;
     String shortContent;
+  //  String affilliation;
+  //  String priotity;
+  //  String orderMeeting;
+    String desiredMeetingDate;
+    String presenters;
+    String invited;
+    String reportTime;
+    String draftDecision;
 
-    public QuestionCardForm (String titleField, String shortContent) {
-        this.titleField = titleField;
+    public QuestionCardForm(String title, String shortContent, String desiredMeetingDate, String presenters, String invited, String reportTime, String draftDecision) {
+
+        //, String desiredMeetingDate, String presenters, String invited, String reportTime, String draftDecision
+        this.title = title;
         this.shortContent = shortContent;
+        this.desiredMeetingDate = desiredMeetingDate;
+        this.presenters = presenters;
+        this.invited = invited;
+        this.reportTime = reportTime;
+        this.draftDecision = draftDecision;
     }
 
-    @Parameterized.Parameters(name = "Parameters are {0} and {1}")
+    @Parameterized.Parameters(name = "Parameters are {0} and {1} and {2} and {3} and {4} and {5} and {6} ")
+
     public static Collection testData() throws IOException {
         InputStream spreadsheet
                 = new FileInputStream(configProperties.DATA_FILE_PATH()+"testDataSuit.xls");
@@ -41,17 +57,22 @@ public class QuestionCardForm extends ParentTest {
         chooseCommitteesPage.clickOnTK();
         questionPage.clickOnButtonCreateQuestion();
         //QuestionCard
-        questionPage.enterTextInToFieldTitle(titleField);
+        questionPage.enterTextInToFieldTitle(title);
        // questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
         questionPage.enterTextInToFieldShortContent(shortContent);
         questionPage.chooseValueAffilliationInDD();
         questionPage.chooseValuePriorityInDD();
         questionPage.chooseValueOrderMeetingInDD();
-        questionPage.enterTextInToFieldDesiredMeetingDate("11.10.2019");
-        questionPage.enterTextInToFieldPresenters("Марк Леон");
-        questionPage.enterTextInToFieldInvited("Стелла Орен");
-        questionPage.enterTextInToFieldReportTime("60");
-        questionPage.enterTextInToFieldDraftDecision("проект решения...");
+      //  questionPage.enterTextInToFieldDesiredMeetingDate("11.10.2019");
+        questionPage.enterTextInToFieldDesiredMeetingDate(desiredMeetingDate);
+      //  questionPage.enterTextInToFieldPresenters("Марк Леон");
+        questionPage.enterTextInToFieldPresenters(presenters);
+      //  questionPage.enterTextInToFieldInvited("Стелла Орен");
+        questionPage.enterTextInToFieldInvited(invited);
+      //  questionPage.enterTextInToFieldReportTime("60");
+        questionPage.enterTextInToFieldReportTime(reportTime);
+      //  questionPage.enterTextInToFieldDraftDecision("проект решения...");
+        questionPage.enterTextInToFieldDraftDecision(draftDecision);
         questionPage.clickOnButtonSaveQuestionCard();
         checkExpectedResult(
                 "StartWorkFlowButton is NOT present",
