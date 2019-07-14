@@ -57,13 +57,14 @@ public class QuestionCardForm extends ParentTest {
         chooseCommitteesPage.clickOnTK();
         questionPage.clickOnButtonCreateQuestion();
         //QuestionCard
+       // questionPage.enterTextInToFieldTitle("LOL LOL LOL");
         questionPage.enterTextInToFieldTitle(title);
-       // questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
+        //questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
         questionPage.enterTextInToFieldShortContent(shortContent);
         questionPage.chooseValueAffilliationInDD();
         questionPage.chooseValuePriorityInDD();
         questionPage.chooseValueOrderMeetingInDD();
-      //  questionPage.enterTextInToFieldDesiredMeetingDate("11.10.2019");
+       // questionPage.enterTextInToFieldDesiredMeetingDate("11.10.2019");
         questionPage.enterTextInToFieldDesiredMeetingDate(desiredMeetingDate);
       //  questionPage.enterTextInToFieldPresenters("Марк Леон");
         questionPage.enterTextInToFieldPresenters(presenters);
