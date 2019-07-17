@@ -56,9 +56,9 @@ public class ActionsWithOurElements {
      public void changeFrameWithWait(WebElement element) {
         try {
             webDriver.switchTo().defaultContent();
-            Thread.sleep(7000);
+            Thread.sleep(15000);
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
-            Thread.sleep(7000);
+            Thread.sleep(15000);
          //   element.click();
             logger.info("Frame was changed");
            // System.out.println("Frame was changed");
