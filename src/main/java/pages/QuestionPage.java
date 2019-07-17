@@ -1,6 +1,7 @@
 package pages;
 
 
+import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -103,60 +104,61 @@ public class QuestionPage extends ParentPage {
     @FindBy (id= "seeSteps")
     private WebElement lookAllSteps;
 
-
+@Step
     public void clickOnButtonCreateQuestion() {
         actionsWithOurElements.clickOnElement(createQuestionCardButton);
         // webDriver.findElement(By.xpath(".//*[@id='createNewItem']")).click();
         // webDriver.findElement(By.cssSelector("#createNewItem")).click();
        }
 
+@Step
     public void enterTextInToFieldTitle(String fieldText) {
         actionsWithOurElements.openFirstFrame(fieldTitle);
        // webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
         actionsWithOurElements.enterTextInToElement(fieldTitle, fieldText);
             //webDriver.findElement(By.cssSelector("input[id^='Title_']")).sendKeys(name);
     }
-
+@Step
     public void enterTextInToFieldShortContent(String fieldText) {
         actionsWithOurElements.enterTextInToElement(fieldShortContent, fieldText);
      }
-
+@Step
     public void chooseValueAffilliationInDD() {
         Select dropDown = new Select(webDriver.findElement(By.id("LSCMTAffiliation_af97b2b3-70ac-4e57-877b-5ce4e9a0fc81_$DropDownChoice")));
         dropDown.selectByIndex(3);
     }
-
+@Step
     public void chooseValuePriorityInDD() {
         Select dropDown = new Select(webDriver.findElement(By.id("LSCMTPriority_a35dfcee-a2d8-43b8-990a-706615bfbf48_$DropDownChoice")));
         dropDown.selectByIndex(0);
     }
-
+@Step
     public void chooseValueOrderMeetingInDD() {
         Select dropDown = new Select(webDriver.findElement(By.id("LSCMTMeetingPriority_757a0099-9387-494d-b3d9-b4f4b29373a9_$DropDownChoice")));
         dropDown.selectByIndex(1);
     }
-
+@Step
     public void enterTextInToFieldDesiredMeetingDate(String fieldText) {
        actionsWithOurElements.enterTextInToElement(fieldDesiredMeetingDate, fieldText);
     }
-
+@Step
     public void enterTextInToFieldPresenters(String fieldText) {
         actionsWithOurElements.enterTextInToElement(fieldPresenters, fieldText);
     }
-
+@Step
     public void enterTextInToFieldInvited(String fieldText) {
         actionsWithOurElements.enterTextInToElement(fieldInvited, fieldText);
     }
-
+@Step
     public void enterTextInToFieldReportTime(String fieldText) {
         fieldReportTime.clear();
         actionsWithOurElements.enterTextInToElement(fieldReportTime,fieldText);
     }
-
+@Step
     public void enterTextInToFieldDraftDecision(String fieldText) {
         actionsWithOurElements.enterTextInToElement(fieldDraftDecision, fieldText);
     }
-
+@Step
     public void clickOnButtonSaveQuestionCard() {
         actionsWithOurElements.clickOnElement(buttonSaveQuestionCard);
     }

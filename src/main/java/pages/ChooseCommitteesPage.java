@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +17,7 @@ public class ChooseCommitteesPage extends ParentPage {
     }
 
 
-
+@Step
     public void openChooseCommitteesPageAfterAutorization(){
         try {
             webDriver.get("https://COMPETENCE%5Cmark.leon:Ljrevtyn33@ob-committees.ext5.lizard.net.ua/SitePages/Home.aspx");
@@ -27,7 +28,7 @@ public class ChooseCommitteesPage extends ParentPage {
         }
     }
 
-
+@Step
     public void clickOnTK() {
         try{
             webDriver.findElement(By.xpath(".//*[@href='https://ob-committees.ext5.lizard.net.ua/sites/tk']")).click();
