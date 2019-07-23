@@ -104,6 +104,10 @@ public class QuestionPage extends ParentPage {
     @FindBy (id= "seeSteps")
     private WebElement lookAllSteps;
 
+
+    @FindBy(xpath = ".//a[@href='https://ob-committees.ext5.lizard.net.ua/sites/tk/lists/LSCMTMeetingsList']")
+    private WebElement  meetingsLink;
+
 @Step
     public void clickOnButtonCreateQuestion() {
         actionsWithOurElements.clickOnElement(createQuestionCardButton);
@@ -274,6 +278,11 @@ public class QuestionPage extends ParentPage {
 
 
     }
+
+    public void clickOnMettingsPage() {
+        actionsWithOurElements.clickOnElement(meetingsLink);
+    }
+
 }
 
 

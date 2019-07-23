@@ -14,6 +14,7 @@ import org.junit.runner.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.ChooseCommitteesPage;
+import pages.MeetingsPage;
 import pages.QuestionPage;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +28,7 @@ public class ParentTest {
 
     protected ChooseCommitteesPage chooseCommitteesPage;
     protected QuestionPage questionPage;
+    protected MeetingsPage meetingsPage;
 
     @Before
     public void setUp(){
@@ -40,6 +42,7 @@ public class ParentTest {
 
         chooseCommitteesPage = new ChooseCommitteesPage(webDriver);
         questionPage = new QuestionPage(webDriver);
+        meetingsPage = new MeetingsPage(webDriver);
     }
     @After
     public void tearDown(){
@@ -68,13 +71,14 @@ public class ParentTest {
             }
             saveScreenshot(((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES));
         }
+
         @Override
         protected void finished(Description description) {
             logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
             try {
                 webDriver.quit();
             } catch (Exception e) {
-                logger.error(e);
+               logger.error(e);
             }
         }
     };
