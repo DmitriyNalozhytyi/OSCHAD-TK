@@ -16,7 +16,7 @@ import java.util.Map;
 
 @RunWith(Parameterized.class)
 
-public class QuestionCardForm extends ParentTest {
+public class QuestionCardFormTest extends ParentTest {
 
     String title;
     String shortContent;
@@ -29,7 +29,7 @@ public class QuestionCardForm extends ParentTest {
     String reportTime;
     String draftDecision;
 
-    public QuestionCardForm(String title, String shortContent, String desiredMeetingDate, String presenters, String invited, String reportTime, String draftDecision) {
+    public QuestionCardFormTest(String title, String shortContent, String desiredMeetingDate, String presenters, String invited, String reportTime, String draftDecision) {
 
         //, String desiredMeetingDate, String presenters, String invited, String reportTime, String draftDecision
         this.title = title;

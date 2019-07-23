@@ -53,16 +53,16 @@ public class ActionsWithOurElements {
         }
     }
 
-     public void changeFrameWithWait(WebElement element) {
+    public void changeFrameWithWait(WebElement element) {
         try {
             webDriver.switchTo().defaultContent();
             Thread.sleep(15000);
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
             Thread.sleep(15000);
-         //   element.click();
+            //   element.click();
             logger.info("Frame was changed");
-           // System.out.println("Frame was changed");
-        }catch (Exception e) {
+            // System.out.println("Frame was changed");
+        } catch (Exception e) {
             System.out.println("Can't change frame");
             printErrorAndStopTest(e);
         }
@@ -75,7 +75,7 @@ public class ActionsWithOurElements {
             Thread.sleep(7000);
             logger.info("quite from All Frames");
             //System.out.println("quite from All Frames");
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.info("quite from All Frames");
             //System.out.println("Can't change frame");
             printErrorAndStopTest(e);
@@ -89,21 +89,22 @@ public class ActionsWithOurElements {
             element.sendKeys(Keys.ENTER);
             Thread.sleep(5000);
             logger.info(text + "was input into element");
-           // System.out.println(text + "was input into element");
+            // System.out.println(text + "was input into element");
         } catch (Exception e) {
             logger.info("Can't enter text in to fieldExecutor" + e);
             //System.out.println("Can't enter text in to fieldExecutor" + e);
             printErrorAndStopTest(e);
         }
 
-   }
-    public void openFirstFrame (WebElement element) {
+    }
+
+    public void openFirstFrame(WebElement element) {
         try {
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
             logger.info("First Frame was open");
             //System.out.println("First Frame was open");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.info("Can't change frame");
             //System.out.println("Can't change frame");
             printErrorAndStopTest(e);
@@ -116,31 +117,50 @@ public class ActionsWithOurElements {
 
             logger.info(closeButtons.size() + " - number of same elements");
             //System.out.println(closeButtons.size() + " - number of same elements");
-            if(closeButtons.size() > 0) {
-                closeButtons.get(closeButtons.size()-1).click();
+            if (closeButtons.size() > 0) {
+                closeButtons.get(closeButtons.size() - 1).click();
                 logger.info("CloseButton was clicked");
-               // System.out.println("CloseButton was clicked");
-            }else{
+                // System.out.println("CloseButton was clicked");
+            } else {
                 logger.info("!!! number of same elements '0'!!! ");
-              //  System.out.println("!!! number of same elements '0'!!! ");
+                //  System.out.println("!!! number of same elements '0'!!! ");
             }
-            }catch (Exception e) {
-                logger.info("Can't enter text in to fieldExecutor" + e);
-               // System.out.println("Can't enter text in to fieldExecutor" + e);
-                printErrorAndStopTest(e);
-            }
+        } catch (Exception e) {
+            logger.info("Can't enter text in to fieldExecutor" + e);
+            // System.out.println("Can't enter text in to fieldExecutor" + e);
+            printErrorAndStopTest(e);
+        }
     }
 
-    public boolean isElementPresent(WebElement webElement){
+    public boolean isElementPresent(WebElement webElement) {
         try {
             boolean isDisplayed = webElement.isDisplayed();
             logger.info("Element is displayed -->" + isDisplayed);
             return webElement.isDisplayed();
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.info("Element is displayed --> false");
             return false;
         }
     }
+
+    public void clearField(WebElement element) {
+        try {
+            element.clear();
+            logger.info("Element was cleared");
+            //        System.out.println(element + "Element was clicked");
+        } catch (Exception e) {
+            System.out.println("Can't clear  Element");
+            printErrorAndStopTest(e);
+        }
+    }
+
 }
-
-
+   // public void clickOnElement(WebElement element) {
+   //     try {
+    //        element.click();
+     //       logger.info("Element was clicked");
+    //        //System.out.println(element + "Element was clicked");
+   //     } catch (Exception e) {
+   //         System.out.println("Can't click on Element");
+    //        printErrorAndStopTest(e);
+  //      }
