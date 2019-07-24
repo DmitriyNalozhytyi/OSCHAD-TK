@@ -20,9 +20,13 @@ public class MeetingCardFormTest extends ParentTest {
 
   //  String meetingsPlace;
   //  String meetingsType;
+    // String regular;
+
   //  String chairman;
   //  String members;
+    //  String clerk;
    // String advisories;
+    // String invited
    // String speakers;
    // String comments;
 //
@@ -55,8 +59,31 @@ public class MeetingCardFormTest extends ParentTest {
         meetingsPage.clickOnButtonCreateMeeting();
         meetingsPage.enterTextInToFieldMeetingsDate("11.10.2020");
         meetingsPage.enterTextInToFieldMeetingsDateStart("12.10.2020");
-        meetingsPage.chooseHoursMeetingsDateStartinDD();
-        meetingsPage.chooseMinutesMeetingsDateStartinDD();
+        meetingsPage.chooseHoursMeetingsDateStartInDD();
+        meetingsPage.chooseMinutesMeetingsDateStartInDD();
+        meetingsPage.enterTextInToFieldMeetingsDateFinish("13.10.2020");
+        meetingsPage.chooseHoursMeetingsDateFinishInDD();
+        meetingsPage.chooseMinutesMeetingsDateFinishInDD();
+        meetingsPage.enterTextInToFieldMeetingsPlace("уганда");
+        meetingsPage.chooseMeetingsTypeInDD();
+        meetingsPage.chooseRegularInDD();
+     //   meetingsPage.enterTextInToFieldChairman("Антон Дуб");
+     //   meetingsPage.enterTextInToFieldMembers("Антон Дуб");
+      //  meetingsPage.enterTextInToFieldClerk("Марк Леон");
+        meetingsPage.enterTextInToFieldAdvisories("Стелла Орен");
+        meetingsPage.enterTextInToFieldInvited("Антон Дуб");
+        meetingsPage.enterTextInToFieldSpeakers("Андре Грин");
+        meetingsPage.enterTextInToFieldComments("comment");
+        meetingsPage.enterTextInToFieldDateForProtocol("14.10.2020");
+        meetingsPage.chooseHoursDateForProtocol();
+        meetingsPage.chooseMinutesDateForProtocol();
+        meetingsPage.clickOnButtonSaveMeetingCard();
+        checkExpectedResult(
+                          "StartMeetingButton is NOT present",
+                          meetingsPage.isStartMeetingButtonPresent()
+                  );
+
+
 
    //     questionPage.clickOnButtonCreateQuestion();
 

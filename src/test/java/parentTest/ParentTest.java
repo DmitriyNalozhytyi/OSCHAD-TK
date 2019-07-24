@@ -73,10 +73,10 @@ public class ParentTest {
         }
 
         @Override
-        protected void finished(Description description) {
-            logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
-            try {
-                webDriver.quit();
+                protected void finished(Description description) {
+                    logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
+                    try {
+                        webDriver.quit();
             } catch (Exception e) {
                logger.error(e);
             }
