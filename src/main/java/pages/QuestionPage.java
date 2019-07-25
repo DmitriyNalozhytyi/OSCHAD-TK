@@ -147,11 +147,14 @@ public class QuestionPage extends ParentPage {
     }
 @Step
     public void enterTextInToFieldPresenters(String fieldText) {
-        actionsWithOurElements.enterTextInToElement(fieldPresenters, fieldText);
+      //  actionsWithOurElements.enterTextInToElement(fieldPresenters, fieldText);
+    actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(fieldPresenters, fieldText);
     }
 @Step
     public void enterTextInToFieldInvited(String fieldText) {
-        actionsWithOurElements.enterTextInToElement(fieldInvited, fieldText);
+       // actionsWithOurElements.enterTextInToElement(fieldInvited, fieldText);
+    actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(fieldInvited, fieldText);
+
     }
 @Step
     public void enterTextInToFieldReportTime(String fieldText) {

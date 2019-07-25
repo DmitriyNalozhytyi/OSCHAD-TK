@@ -45,12 +45,11 @@ public class QuestionCardFormTest extends ParentTest {
 
     public static Collection testData() throws IOException {
         InputStream spreadsheet
-                = new FileInputStream(configProperties.DATA_FILE_PATH()+"testDataSuit.xls");
+                = new FileInputStream(configProperties.DATA_FILE_PATH()+"testDataSuitQuestionCardForm.xls");
         return new SpreadsheetData(spreadsheet, "InvalidLogOn").getData();
     }
 
     @Test
-
     public void checkFieldsQuestionCardForm()  {
 
         chooseCommitteesPage.openChooseCommitteesPageAfterAutorization();
@@ -80,8 +79,4 @@ public class QuestionCardFormTest extends ParentTest {
                 questionPage.isStartFlowButtonPresent()
         );
     }
-
-
-
-
 }
