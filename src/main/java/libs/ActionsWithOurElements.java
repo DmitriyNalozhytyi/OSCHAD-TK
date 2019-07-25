@@ -56,9 +56,9 @@ public class ActionsWithOurElements {
     public void changeFrameWithWait(WebElement element) {
         try {
             webDriver.switchTo().defaultContent();
-            Thread.sleep(15000);
+            Thread.sleep(8000);
             webDriver.switchTo().frame(webDriver.findElements(By.tagName("iframe")).size() - 1);
-            Thread.sleep(15000);
+            Thread.sleep(8000);
             //   element.click();
             logger.info("Frame was changed");
             // System.out.println("Frame was changed");
@@ -84,11 +84,11 @@ public class ActionsWithOurElements {
 
     public void enterTextInToPeopePickerFieldUsingEnter(WebElement element, String text) {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             element.sendKeys(text);
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             element.sendKeys(Keys.ENTER);
-            Thread.sleep(5000);
+           // Thread.sleep(5000);
             logger.info(text + "was input into element");
             // System.out.println(text + "was input into element");
         } catch (Exception e) {

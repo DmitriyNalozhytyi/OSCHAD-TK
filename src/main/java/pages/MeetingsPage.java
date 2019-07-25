@@ -131,8 +131,8 @@ public class MeetingsPage extends ParentPage {
     @Step
     public void enterTextInToFieldChairman(String fieldText) {
         actionsWithOurElements.clickOnElement(deleteUserInPeoplePicker);
-       // actionsWithOurElements.clearField(fieldChairman);
-        actionsWithOurElements.enterTextInToElement(fieldChairman, fieldText);
+        actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(fieldChairman, fieldText);
+      //  actionsWithOurElements.enterTextInToElement(fieldChairman, fieldText);
     }
     @Step
     public void enterTextInToFieldMembers(String fieldText) {
@@ -160,19 +160,24 @@ public class MeetingsPage extends ParentPage {
           //   System.out.println("Can't enter text in to fieldExecutor" + e);
            // printErrorAndStopTest(e);
         }
-        actionsWithOurElements.enterTextInToElement(clerk, fieldText);
+      //  actionsWithOurElements.enterTextInToElement(clerk, fieldText);
+        actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(clerk, fieldText);
+
     }
     @Step
     public void enterTextInToFieldAdvisories(String fieldText) {
-        actionsWithOurElements.enterTextInToElement(advisories, fieldText);
+      //  actionsWithOurElements.enterTextInToElement(advisories, fieldText);
+        actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(advisories, fieldText);
     }
     @Step
     public void enterTextInToFieldInvited(String fieldText) {
-        actionsWithOurElements.enterTextInToElement(invited, fieldText);
+       // actionsWithOurElements.enterTextInToElement(invited, fieldText);
+        actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(invited, fieldText);
     }
     @Step
     public void enterTextInToFieldSpeakers(String fieldText) {
-        actionsWithOurElements.enterTextInToElement(speakers, fieldText);
+       // actionsWithOurElements.enterTextInToElement(speakers, fieldText);
+        actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(speakers, fieldText);
     }
     @Step
     public void enterTextInToFieldComments(String fieldText) {
