@@ -17,6 +17,8 @@ public class SolutionCardFormTest extends ParentTest {
 
 
 
+
+
     //    meetingsPage.openMeetingsPage();
   //      meetingsPage.clickOnButtonCreateMeeting();
         //   meetingsPage.enterTextInToFieldMeetingsDate("11.10.2020");
