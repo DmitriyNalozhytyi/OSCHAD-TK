@@ -45,7 +45,7 @@ public class MeetingCardFormTest extends ParentTest {
 
 //    public static Collection testDataMeetingCardForm() throws IOException {
  //       InputStream spreadsheet
- //               = new FileInputStream(configProperties.DATA_FILE_PATH()+"testDataSuit.xls");
+ //               = new FileInputStream(configProperties.DATA_FILE_PATH()+"testDataSuitQuestionCardForm.xls");
   //      return new SpreadsheetData(spreadsheet, "InvalidLogOn").getData();
   //  }
 
@@ -67,11 +67,13 @@ public class MeetingCardFormTest extends ParentTest {
         meetingsPage.enterTextInToFieldMeetingsPlace("уганда");
         meetingsPage.chooseMeetingsTypeInDD();
         meetingsPage.chooseRegularInDD();
-     //   meetingsPage.enterTextInToFieldChairman("Антон Дуб");
-     //   meetingsPage.enterTextInToFieldMembers("Антон Дуб");
-      //  meetingsPage.enterTextInToFieldClerk("Марк Леон");
-        meetingsPage.enterTextInToFieldAdvisories("Стелла Орен");
-        meetingsPage.enterTextInToFieldInvited("Антон Дуб");
+// costil
+        meetingsPage.enterTextInToFieldChairman("Андре Грин");
+        //meetingsPage.enterTextInToFieldMembers("Aртем Аронов");
+        meetingsPage.enterTextInToFieldClerk("Андре Грин");
+// costil
+        meetingsPage.enterTextInToFieldAdvisories("Андре Грин");
+        meetingsPage.enterTextInToFieldInvited("Андре Грин");
         meetingsPage.enterTextInToFieldSpeakers("Андре Грин");
         meetingsPage.enterTextInToFieldComments("comment");
         meetingsPage.enterTextInToFieldDateForProtocol("14.10.2020");
@@ -85,31 +87,6 @@ public class MeetingCardFormTest extends ParentTest {
 
 
 
-   //     questionPage.clickOnButtonCreateQuestion();
-
-        //QuestionCard
-        // questionPage.enterTextInToFieldTitle("LOL LOL LOL");
-     //   questionPage.enterTextInToFieldTitle(title);
-        //questionPage.enterTextInToFieldShortContent(" korotkiy zmist text");
-    //    questionPage.enterTextInToFieldShortContent(shortContent);
-     //   questionPage.chooseValueAffilliationInDD();
-     //   questionPage.chooseValuePriorityInDD();
-       // questionPage.chooseValueOrderMeetingInDD();
-        // questionPage.enterTextInToFieldDesiredMeetingDate("11.10.2019");
-      //  questionPage.enterTextInToFieldDesiredMeetingDate(desiredMeetingDate);
-        //  questionPage.enterTextInToFieldPresenters("Марк Леон");
-      //  questionPage.enterTextInToFieldPresenters(presenters);
-        //  questionPage.enterTextInToFieldInvited("Стелла Орен");
-      //  questionPage.enterTextInToFieldInvited(invited);
-        //  questionPage.enterTextInToFieldReportTime("60");
-      //  questionPage.enterTextInToFieldReportTime(reportTime);
-        //  questionPage.enterTextInToFieldDraftDecision("проект решения...");
-      //  questionPage.enterTextInToFieldDraftDecision(draftDecision);
-       // questionPage.clickOnButtonSaveQuestionCard();
-     //   checkExpectedResult(
-      //          "StartWorkFlowButton is NOT present",
-      //          questionPage.isStartFlowButtonPresent()
-      //  );
     }
 
 

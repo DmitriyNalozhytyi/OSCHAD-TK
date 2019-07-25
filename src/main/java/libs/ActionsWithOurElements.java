@@ -36,7 +36,7 @@ public class ActionsWithOurElements {
         }
     }
 
-    private void printErrorAndStopTest(Exception e) {
+       private void printErrorAndStopTest(Exception e) {
         logger.info("Can't work with element" + e);
         //System.out.println("Can't work with element" + e);
         Assert.fail("Can't work with element" + e);
@@ -84,6 +84,7 @@ public class ActionsWithOurElements {
 
     public void enterTextInToPeopePickerFieldUsingEnter(WebElement element, String text) {
         try {
+            Thread.sleep(5000);
             element.sendKeys(text);
             Thread.sleep(5000);
             element.sendKeys(Keys.ENTER);
@@ -131,6 +132,8 @@ public class ActionsWithOurElements {
             printErrorAndStopTest(e);
         }
     }
+
+
 
     public boolean isElementPresent(WebElement webElement) {
         try {
