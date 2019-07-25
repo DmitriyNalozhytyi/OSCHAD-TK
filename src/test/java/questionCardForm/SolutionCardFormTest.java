@@ -14,6 +14,8 @@ public class SolutionCardFormTest extends ParentTest {
         chooseCommitteesPage.clickOnTK();
         solutionPage.openSolutionPage();
 
+        solutionPage.openSolutionPage();
+
 
 
 
