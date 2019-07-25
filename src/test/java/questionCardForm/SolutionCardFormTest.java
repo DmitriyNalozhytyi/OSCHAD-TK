@@ -15,6 +15,7 @@ public class SolutionCardFormTest extends ParentTest {
         solutionPage.openSolutionPage();
 
         solutionPage.openSolutionPage();
+        solutionPage.openSolutionPage();
 
 
 
