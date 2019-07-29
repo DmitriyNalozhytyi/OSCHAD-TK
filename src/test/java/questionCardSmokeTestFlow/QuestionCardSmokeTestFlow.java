@@ -25,7 +25,7 @@ public class QuestionCardSmokeTestFlow extends ParentTest {
     public static Collection testData(){
         return Arrays.asList(new Object[][]{
                 {"Sasha","Kooooo"},
-                {"Sasha2","Кооо2"}
+            //    {"Sasha2","Кооо2"}
         });
     }
 
@@ -75,6 +75,48 @@ public class QuestionCardSmokeTestFlow extends ParentTest {
         questionPage.enterTextInToFieldCommQuestionTask("GGGGGGGG");
         questionPage.clickOnButtonAggreeOnTaskForm();
         questionPage.closeQuestionCard();
+
+        meetingsPage.openMeetingsPage();
+        meetingsPage.clickOnButtonCreateMeeting();
+        meetingsPage.enterTextInToFieldMeetingsDate("11.10.2020");
+       // meetingsPage.enterTextInToFieldMeetingsDate(meetingsDate);
+        meetingsPage.enterTextInToFieldMeetingsDateStart("12.10.2020");
+       // meetingsPage.enterTextInToFieldMeetingsDateStart(meetingsDateStart);
+        meetingsPage.chooseHoursMeetingsDateStartInDD();
+        meetingsPage.chooseMinutesMeetingsDateStartInDD();
+        meetingsPage.enterTextInToFieldMeetingsDateFinish("13.10.2020");
+        //meetingsPage.enterTextInToFieldMeetingsDateFinish(meetingsDateFinish);
+        meetingsPage.chooseHoursMeetingsDateFinishInDD();
+        meetingsPage.chooseMinutesMeetingsDateFinishInDD();
+        meetingsPage.enterTextInToFieldMeetingsPlace("уганда");
+       // meetingsPage.enterTextInToFieldMeetingsPlace(meetingsPlace);
+        meetingsPage.chooseMeetingsTypeInDD();
+        meetingsPage.chooseRegularInDD();
+// costil
+        meetingsPage.enterTextInToFieldChairman("Алла Сорока");
+        //meetingsPage.enterTextInToFieldChairman(chairman);
+
+        //meetingsPage.enterTextInToFieldMembers("Aртем Аронов");
+
+        meetingsPage.enterTextInToFieldClerk("Марк Леон");
+        //meetingsPage.enterTextInToFieldClerk(clerk);
+// costil
+        meetingsPage.enterTextInToFieldAdvisories("Андре Грин");
+        //meetingsPage.enterTextInToFieldAdvisories(advisories);
+        meetingsPage.enterTextInToFieldInvited("Андре Грин");
+        // meetingsPage.enterTextInToFieldInvited(invited);
+        meetingsPage.enterTextInToFieldSpeakers("Андре Грин");
+        //meetingsPage.enterTextInToFieldSpeakers(speakers);
+        meetingsPage.enterTextInToFieldComments("comment");
+        //meetingsPage.enterTextInToFieldComments(comments);
+        meetingsPage.enterTextInToFieldDateForProtocol("14.10.2020");
+        //meetingsPage.enterTextInToFieldDateForProtocol(dateForProtocol);
+        meetingsPage.chooseHoursDateForProtocol();
+        meetingsPage.chooseMinutesDateForProtocol();
+        meetingsPage.clickOnButtonSaveMeetingCard();
+        meetingsPage.clickOnStartMeetingButton();
+        meetingsPage.tabDocumentsInMeetingCard();
+        meetingsPage.clickOnButtonAddQuestionsToMeeting();
 
 
 

@@ -5,8 +5,11 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
 
 import java.util.List;
 
@@ -14,6 +17,8 @@ public class MeetingsPage extends ParentPage {
     public MeetingsPage(WebDriver webDriver) {
         super(webDriver);
     }
+
+
 
     @FindBy(xpath = ".//*[@id='createNewItem']")
     private WebElement createMeetingCardButton;
@@ -62,6 +67,17 @@ public class MeetingsPage extends ParentPage {
 
     @FindBy(id = "startMeeting")
     private WebElement buttonStartMeeting;
+
+  //  @FindBy(xpath = ".//*[text()='Порядок денний']")
+  //  private WebElement tabDocumentInMeetingCard;
+
+    @FindBy(className = "ls-tab")
+    private WebElement inactiveTabsInPD;
+
+    @FindBy(id = "addQuestionsToMeeting")
+    private WebElement addQuestionsToMeeting;
+
+
 
     @Step
     public void openMeetingsPage() {
@@ -207,4 +223,57 @@ public class MeetingsPage extends ParentPage {
         actionsWithOurElements.changeFrameWithWait(buttonStartMeeting);
         return actionsWithOurElements.isElementPresent(buttonStartMeeting);
     }
+// method for alerts (elements not in Dom)
+    @Step
+    public void clickOnStartMeetingButton() {
+        actionsWithOurElements.changeFrameWithWait(buttonStartMeeting);
+        actionsWithOurElements.clickOnElement(buttonStartMeeting);
+        webDriver.switchTo().alert().accept();
+    }
+
+    @Step
+    public void tabDocumentsInMeetingCard() {
+        actionsWithOurElements.changeFrameWithWait(inactiveTabsInPD);
+
+        List<WebElement> inactiveTabsOnMeetingCard = webDriver.findElements(By.className("inactive-tab"));
+
+        System.out.println(inactiveTabsOnMeetingCard.size() + " - number of tabs on Meeting Card");
+        if(inactiveTabsOnMeetingCard.size() > 0) {
+            inactiveTabsOnMeetingCard.get(inactiveTabsOnMeetingCard.size()-4).click();
+                   logger.info("tab PD opened");
+        }else{
+            logger.info("!!! number of same elements '0'!!! ");
+
+        }
+    }
+
+
+    public void clickOnButtonAddQuestionsToMeeting() {
+
+                try {
+                List<WebElement> buttonsAddQuestionsToMeeting = webDriver.findElements(By.id("addQuestionsToMeeting"));
+                logger.info(buttonsAddQuestionsToMeeting.size() + " - number of same elements!!!!!!!!!!!!!!!!");
+                if (buttonsAddQuestionsToMeeting.size() > 0) {
+                    buttonsAddQuestionsToMeeting.get(buttonsAddQuestionsToMeeting.size() - 1).click();
+                    logger.info("Second element was clicked");
+
+                } else {
+                    logger.info("!!! number of same elements '0'!!! ");
+                    //  System.out.println("!!! number of same elements '0'!!! ");
+                }
+            } catch (Exception e) {
+                logger.info("Can't click jn second element" + e);
+                //   System.out.println("Can't enter text in to fieldExecutor" + e);
+                // printErrorAndStopTest(e);
+            }
+            //  actionsWithOurElements.enterTextInToElement(clerk, fieldText);
+
+
+        }
+
+
+
+
+
+
 }

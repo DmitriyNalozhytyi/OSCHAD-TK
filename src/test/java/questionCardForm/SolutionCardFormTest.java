@@ -13,10 +13,18 @@ public class SolutionCardFormTest extends ParentTest {
         chooseCommitteesPage.openChooseCommitteesPageAfterAutorization();
         chooseCommitteesPage.clickOnTK();
         solutionPage.openSolutionPage();
+        solutionPage.enterTextInToFieldCommentingTerm("13.10.2020");
+        solutionPage.chooseHoursCommentingTermInDD();
+        solutionPage.chooseMinutesCommentingTermInDD();
+        solutionPage.enterTextInToFieldMainSolutionText(" text rishennya");
+        solutionPage.clickOnButtonAddDicisionPoint();
+        solutionPage.enterTextInToFieldPointText(" punkt rishennya");
+        solutionPage.enterTextInToFieldResponsibleUsers("Марк Леон");
+        solutionPage.enterTextInToFieldPointDueData("13.10.2022");
+        solutionPage.chooseCheckBoxPointDeclarative();
+        solutionPage.clickOnButtonSaveSolutionCard();
 
-        solutionPage.openSolutionPage();
-        solutionPage.openSolutionPage();
-        solutionPage.openSolutionPage();
+
 
 
 
