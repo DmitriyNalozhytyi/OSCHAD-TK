@@ -111,8 +111,16 @@ public class MeetingCardFormTest extends ParentTest {
         meetingsPage.chooseHoursDateForProtocol();
         meetingsPage.chooseMinutesDateForProtocol();
         meetingsPage.clickOnButtonSaveMeetingCard();
+      //  meetingsPage.clickOnStartMeetingButton();
+     //   meetingsPage.tabDocumentsInMeetingCard();
+      //  meetingsPage.clickOnButtonAddQuestionsToMeeting();
+
+
+
+
+
         checkExpectedResult(
-                          "StartMeetingButton is NOT present",
+                         "StartMeetingButton is NOT present",
                           meetingsPage.isStartMeetingButtonPresent()
                   );
 

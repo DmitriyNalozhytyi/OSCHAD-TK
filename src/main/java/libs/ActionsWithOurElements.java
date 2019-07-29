@@ -88,11 +88,26 @@ public class ActionsWithOurElements {
             element.sendKeys(text);
             Thread.sleep(2000);
             element.sendKeys(Keys.ENTER);
-           // Thread.sleep(5000);
+            // Thread.sleep(5000);
             logger.info(text + "was input into element");
             // System.out.println(text + "was input into element");
         } catch (Exception e) {
             logger.info("Can't enter text in to fieldExecutor" + e);
+            //System.out.println("Can't enter text in to fieldExecutor" + e);
+            printErrorAndStopTest(e);
+        }
+
+    }
+    public void clickEnter(WebElement element) {
+        try {
+
+            Thread.sleep(2000);
+            element.sendKeys(Keys.ENTER);
+            // Thread.sleep(5000);
+            logger.info("clicked Enter");
+            // System.out.println(text + "was input into element");
+        } catch (Exception e) {
+            logger.info("Can't click Enter" + e);
             //System.out.println("Can't enter text in to fieldExecutor" + e);
             printErrorAndStopTest(e);
         }

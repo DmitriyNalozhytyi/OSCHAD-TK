@@ -76,15 +76,15 @@ public class ParentTest {
             saveScreenshot(((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES));
         }
 
- //       @Override
- //               protected void finished(Description description) {
- //                   logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
-  //                  try {
-  //                      webDriver.quit();
-  //          } catch (Exception e) {
-  //             logger.error(e);
-   //         }
-   //     }
+  //      @Override
+    //            protected void finished(Description description) {
+    //                logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
+    //                try {
+   //                     webDriver.quit();
+   //         } catch (Exception e) {
+    //           logger.error(e);
+    //        }
+  //      }
     };
 
 
