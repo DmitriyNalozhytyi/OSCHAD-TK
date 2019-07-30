@@ -1,4 +1,4 @@
-package questionCardSmokeTestFlow;
+package SmokeTestFlow;
 
         import org.junit.Test;
         import org.junit.runner.RunWith;
@@ -8,15 +8,14 @@ package questionCardSmokeTestFlow;
         import java.util.Arrays;
         import java.util.Collection;
 
-
 @RunWith(Parameterized.class)
 
-public class QuestionCardSmokeTestFlow extends ParentTest {
+public class SmokeTestFlow extends ParentTest {
 
     String titleField;
     String shortContent;
 
-    public QuestionCardSmokeTestFlow(String titleField, String shortContent) {
+    public SmokeTestFlow(String titleField, String shortContent) {
         this.titleField = titleField;
         this.shortContent = shortContent;
     }
@@ -24,7 +23,7 @@ public class QuestionCardSmokeTestFlow extends ParentTest {
     @Parameterized.Parameters
     public static Collection testData(){
         return Arrays.asList(new Object[][]{
-                {"Sasha","Kooooo"},
+                {"Question"," Short Content"},
             //    {"Sasha2","Кооо2"}
         });
     }
@@ -47,7 +46,7 @@ public class QuestionCardSmokeTestFlow extends ParentTest {
         questionPage.enterTextInToFieldPresenters("Марк Леон");
         questionPage.enterTextInToFieldInvited("Стелла Орен");
         questionPage.enterTextInToFieldReportTime("60");
-        questionPage.enterTextInToFieldDraftDecision("проект решения...");
+        questionPage.enterTextInToFieldDraftDecision(" проект решения...");
         questionPage.clickOnButtonSaveQuestionCard();
         //question card is created
         questionPage.clickOnButtonStartWorkflowInNewFrame();
@@ -92,7 +91,7 @@ public class QuestionCardSmokeTestFlow extends ParentTest {
        // meetingsPage.enterTextInToFieldMeetingsPlace(meetingsPlace);
         meetingsPage.chooseMeetingsTypeInDD();
         meetingsPage.chooseRegularInDD();
-// costil
+// try
         meetingsPage.enterTextInToFieldChairman("Алла Сорока");
         //meetingsPage.enterTextInToFieldChairman(chairman);
 
@@ -100,7 +99,7 @@ public class QuestionCardSmokeTestFlow extends ParentTest {
 
         meetingsPage.enterTextInToFieldClerk("Марк Леон");
         //meetingsPage.enterTextInToFieldClerk(clerk);
-// costil
+// try
         meetingsPage.enterTextInToFieldAdvisories("Андре Грин");
         //meetingsPage.enterTextInToFieldAdvisories(advisories);
         meetingsPage.enterTextInToFieldInvited("Андре Грин");
@@ -118,16 +117,10 @@ public class QuestionCardSmokeTestFlow extends ParentTest {
         meetingsPage.tabDocumentsInMeetingCard();
         meetingsPage.clickOnButtonAddQuestionsToMeeting();
 
-
-
-
-
      //   checkExpectedResult(
        //         "StartFlow button is not present",
         //        questionPage.isStartFlowButtonPresent()
         //);
-
-
 
     }
 
