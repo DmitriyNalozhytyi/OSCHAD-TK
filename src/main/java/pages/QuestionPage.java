@@ -183,25 +183,16 @@ public class QuestionPage extends ParentPage {
     // ER:
 
     public boolean  isStartFlowButtonPresent() {
-        actionsWithOurElements.changeFrameWithWait(buttonStartFlow);
+        try {
+            actionsWithOurElements.changeFrameWithWait(buttonStartFlow);
         return actionsWithOurElements.isElementPresent(buttonStartFlow);
 
-
-
-
-        //  try {
-        //   Thread.sleep(10000);
-          //  actionsWithOurElements.changeFrameWithWait(buttonStartWorkFlow);
-
-            //return webDriver.findElement(By.id("sendForApproval")).isDisplayed();
-
-
-
-
-
-      // } catch (Exception e) {
-        //    return false;
-       // }
+      //     Thread.sleep(10000);
+         //   actionsWithOurElements.changeFrameWithWait(buttonStartWorkFlow);
+        //    return webDriver.findElement(By.id("sendForApproval")).isDisplayed();
+       } catch (Exception e) {
+            return false;
+        }
     }
 
     // open new frame:
