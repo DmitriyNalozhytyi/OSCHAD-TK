@@ -111,18 +111,37 @@ public class MeetingCardFormTest extends ParentTest {
         meetingsPage.chooseHoursDateForProtocol();
         meetingsPage.chooseMinutesDateForProtocol();
         meetingsPage.clickOnButtonSaveMeetingCard();
-      //  meetingsPage.clickOnStartMeetingButton();
-     //   meetingsPage.tabDocumentsInMeetingCard();
-      //  meetingsPage.clickOnButtonAddQuestionsToMeeting();
+
+        //
+        meetingsPage.clickOnStartMeetingButton();
+        meetingsPage.tabDocumentsInMeetingCard();
+        meetingsPage.clickOnButtonAddQuestionsToMeeting();
+
+        meetingsPage.chooseQuestionToPDforMeetingCard();
+        meetingsPage.clickOnButtonAddQuestionsFromList();
+        meetingsPage.clickOnButtonCreateSolutionOnMeetingCard();
+
+        solutionPage.enterTextInToFieldCommentingTerm("13.10.2020");
+        solutionPage.chooseHoursCommentingTermInDD();
+        solutionPage.chooseMinutesCommentingTermInDD();
+        solutionPage.enterTextInToFieldMainSolutionText(" text rishennya");
+        solutionPage.clickOnButtonAddDicisionPoint();
+        solutionPage.enterTextInToFieldPointText(" punkt rishennya");
+        solutionPage.enterTextInToFieldResponsibleUsers("Марк Леон");
+        solutionPage.enterTextInToFieldPointDueData("13.10.2022");
+        solutionPage.chooseCheckBoxPointDeclarative();
+        solutionPage.clickOnButtonSaveSolutionCard();
 
 
 
 
 
-        checkExpectedResult(
-                         "StartMeetingButton is NOT present",
-                          meetingsPage.isStartMeetingButtonPresent()
-                  );
+
+
+        //   checkExpectedResult(
+       //                  "StartMeetingButton is NOT present",
+       //                   meetingsPage.isStartMeetingButtonPresent()
+        //          );
 
 
 
