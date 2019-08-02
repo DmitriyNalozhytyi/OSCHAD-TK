@@ -77,6 +77,18 @@ public class MeetingsPage extends ParentPage {
     @FindBy(id = "addQuestionsToMeeting")
     private WebElement addQuestionsToMeeting;
 
+    @FindBy(className = "ls-question-checkbox")
+    private WebElement questionForPD;
+
+    @FindBy(id = "addSelectedQuestionsToMeeting")
+    private WebElement buttonAddSelectedQuestionsToMeeting;
+
+    @FindBy(className = "solution")
+    private WebElement  buttonCreateSolutionOnMeetingCard;
+
+
+
+
 
 
     @Step
@@ -272,8 +284,19 @@ public class MeetingsPage extends ParentPage {
         }
 
 
+    public void chooseQuestionToPDforMeetingCard() {
+        actionsWithOurElements.changeFrameWithWait(addQuestionsToMeeting);
+        actionsWithOurElements.clickOnElement(questionForPD);
+    }
 
+    public void clickOnButtonAddQuestionsFromList() {
+     //   actionsWithOurElements.changeFrameWithWait(addQuestionsToMeeting);
+        actionsWithOurElements.clickOnElement(buttonAddSelectedQuestionsToMeeting);
+        webDriver.switchTo().alert().accept();
+    }
 
-
-
+    public void clickOnButtonCreateSolutionOnMeetingCard() {
+        actionsWithOurElements.changeFrameWithWait(buttonAddSelectedQuestionsToMeeting);
+        actionsWithOurElements.clickOnElement(buttonCreateSolutionOnMeetingCard);
+    }
 }
