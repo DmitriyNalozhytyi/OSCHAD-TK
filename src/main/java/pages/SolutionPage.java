@@ -45,6 +45,14 @@ public class SolutionPage extends ParentPage {
     private WebElement buttonStartVoiting;
 
 
+    @FindBy(id = "LSCMTVotingTerm_87d4545d-9baf-43d5-92d9-563f6abf5f0f_$DateTimeFieldDate")
+    private WebElement fieldVoitingTerm;
+
+
+
+
+    @FindBy(id = "ctl00_ctl43_g_0841cb6b_d3f6_44d5_a123_a8518c724878_ctl00_toolBarTbl_RightRptControls_ctl00_ctl00_diidIOSaveItem")
+    private WebElement buttonSaveVoitingTerm;
     @Step
     public void openSolutionPage() {
         try {
@@ -167,5 +175,26 @@ public class SolutionPage extends ParentPage {
      //       } catch (WebDriverTimeoutException) { /* Ignore */ }
       //  }
 
+    }
+
+    public void enterTextInToFieldVoitingTerm(String fieldText) {
+        actionsWithOurElements.changeFrameWithWait(buttonStartVoiting);
+        actionsWithOurElements.enterTextInToElement(fieldVoitingTerm, fieldText);
+    }
+
+
+    public void chooseHoursInToFieldVoitingTermInDD() {
+        Select dropDown = new Select(webDriver.findElement(By.id("LSCMTVotingTerm_87d4545d-9baf-43d5-92d9-563f6abf5f0f_$DateTimeFieldDateHours")));
+        dropDown.selectByIndex(1);
+    }
+
+    public void chooseMinutesInToFieldVoitingTermInDD() {
+        Select dropDown = new Select(webDriver.findElement(By.id("LSCMTVotingTerm_87d4545d-9baf-43d5-92d9-563f6abf5f0f_$DateTimeFieldDateHours")));
+        dropDown.selectByIndex(1);
+    }
+
+    public void clickOnButtonSave() {
+
+        actionsWithOurElements.clickOnElement(buttonSaveVoitingTerm);
     }
 }

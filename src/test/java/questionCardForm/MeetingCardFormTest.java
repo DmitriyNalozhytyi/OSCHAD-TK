@@ -135,7 +135,11 @@ public class MeetingCardFormTest extends ParentTest {
         meetingsPage.openCreatedSolutionFromMeetingCard();
         solutionPage.chooseSolutionTabInSolutionCard();
         solutionPage.clickOnButtonStartVoiting();
-    //    solutionPage.clickOnButtonOkInPopUp();
+        solutionPage.enterTextInToFieldVoitingTerm("13.10.2020");
+        solutionPage.chooseHoursInToFieldVoitingTermInDD();
+        solutionPage.chooseMinutesInToFieldVoitingTermInDD();
+        solutionPage.clickOnButtonSave();
+
 
 
 
