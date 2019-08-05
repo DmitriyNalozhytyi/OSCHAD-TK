@@ -86,6 +86,12 @@ public class MeetingsPage extends ParentPage {
     @FindBy(className = "solution")
     private WebElement  buttonCreateSolutionOnMeetingCard;
 
+    @FindBy(className = "solution")
+    private WebElement buttonOpenSolutiomFromMeetingCard;
+
+
+
+
 
 
 
@@ -299,4 +305,11 @@ public class MeetingsPage extends ParentPage {
         actionsWithOurElements.changeFrameWithWait(buttonAddSelectedQuestionsToMeeting);
         actionsWithOurElements.clickOnElement(buttonCreateSolutionOnMeetingCard);
     }
+
+    public void openCreatedSolutionFromMeetingCard() {
+        actionsWithOurElements.changeFrameWithWait(buttonAddSelectedQuestionsToMeeting);
+        actionsWithOurElements.clickOnElement(buttonOpenSolutiomFromMeetingCard);
+    }
+
+
 }

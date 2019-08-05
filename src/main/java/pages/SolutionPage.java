@@ -2,11 +2,14 @@ package pages;
 
 import io.qameta.allure.Step;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class SolutionPage extends ParentPage {
     public SolutionPage(WebDriver webDriver) {
@@ -38,7 +41,8 @@ public class SolutionPage extends ParentPage {
     private WebElement buttonSaveSolutionCard;
 
 
-
+    @FindBy(id = "startVoting")
+    private WebElement buttonStartVoiting;
 
 
     @Step
@@ -51,33 +55,40 @@ public class SolutionPage extends ParentPage {
             Assert.fail("Can not open MeetingsPage" + e);
         }
     }
+
     @Step
     public void enterTextInToFieldCommentingTerm(String fieldText) {
         actionsWithOurElements.changeFrameWithWait(commentingTerm);
         actionsWithOurElements.enterTextInToElement(commentingTerm, fieldText);
     }
+
     @Step
     public void chooseHoursCommentingTermInDD() {
-            Select dropDown = new Select(webDriver.findElement(By.id("LSCMTCommentingTerm_8942a13b-864a-4db4-8739-19f48644980c_$DateTimeFieldDateHours")));
-            dropDown.selectByIndex(3);
+        Select dropDown = new Select(webDriver.findElement(By.id("LSCMTCommentingTerm_8942a13b-864a-4db4-8739-19f48644980c_$DateTimeFieldDateHours")));
+        dropDown.selectByIndex(3);
     }
+
     @Step
     public void chooseMinutesCommentingTermInDD() {
         Select dropDown = new Select(webDriver.findElement(By.id("LSCMTCommentingTerm_8942a13b-864a-4db4-8739-19f48644980c_$DateTimeFieldDateMinutes")));
         dropDown.selectByIndex(3);
     }
+
     @Step
     public void enterTextInToFieldMainSolutionText(String fieldText) {
         actionsWithOurElements.enterTextInToElement(solutionText, fieldText);
     }
+
     @Step
     public void clickOnButtonAddDicisionPoint() {
         actionsWithOurElements.clickOnElement(addDicisionPoint);
     }
+
     @Step
     public void enterTextInToFieldPointText(String fieldText) {
         actionsWithOurElements.enterTextInToElement(pointText, fieldText);
     }
+
     @Step
     public void enterTextInToFieldResponsibleUsers(String fieldText) {
         actionsWithOurElements.enterTextInToPeopePickerFieldUsingEnter(responsibleUsers, fieldText);
@@ -93,5 +104,68 @@ public class SolutionPage extends ParentPage {
 
     public void clickOnButtonSaveSolutionCard() {
         actionsWithOurElements.clickOnElement(buttonSaveSolutionCard);
+    }
+
+    public void closeSolutionCard() {
+        actionsWithOurElements.quiteFromAllFrames(buttonSaveSolutionCard);
+        actionsWithOurElements.clickOnLastElement();
+    }
+
+    public void chooseSolutionTabInSolutionCard() {
+        actionsWithOurElements.changeFrameWithWait(buttonSaveSolutionCard);
+        List<WebElement> inactiveTabsOnMeetingCard = webDriver.findElements(By.className("inactive-tab"));
+
+        System.out.println(inactiveTabsOnMeetingCard.size() + " - number of tabs on Meeting Card");
+        if (inactiveTabsOnMeetingCard.size() > 0) {
+            inactiveTabsOnMeetingCard.get(inactiveTabsOnMeetingCard.size() - 4).click();
+            logger.info("tab Solutin opened");
+        } else {
+            logger.info("!!! number of same elements '0'!!! ");
+
+        }
+
+    }
+
+
+    public void clickOnButtonStartVoiting() {
+        actionsWithOurElements.clickOnElement(buttonStartVoiting);
+   //     actionsWithOurElements.changeFrameWithWait(buttonStartVoiting);
+
+     //   try {
+            WebDriverWait wait = new WebDriverWait(webDriver, 10);
+            wait.until(ExpectedConditions.alertIsPresent());
+        //   Alert alert = webDriver.switchTo().alert();
+       //     System.out.println(alert.getText());
+       //    alert.accept();
+       //     Assert.assertTrue(alert.getText().contains("Thanks."));
+
+      //  } catch (Exception e) {
+      //      exception handling
+     //  }
+        webDriver.switchTo().alert().accept();
+
+////////////////////////////////////////
+   //     public static void HandleAlert(WebDriver webDriver, WebDriverWait wait) {
+     //       if (wait == null) {
+       //         wait = new WebDriverWait(webDriver, 5);
+         //   }
+
+         //   try {
+           //     Alert alert = wait.Until(new ExpectedCondition<Alert> {
+             //       return new ExpectedCondition<Alert>() {
+               //         @Override
+                 //       public Alert apply(WebDriver driver) {
+                   //         try {
+                     //           return driver.switchTo().alert();
+                       //     } catch (NoAlertPresentException e) {
+                         //       return null;
+     //                       }
+       //                 }
+         //           }
+           //     });
+             //   alert.Accept();
+     //       } catch (WebDriverTimeoutException) { /* Ignore */ }
+      //  }
+
     }
 }
