@@ -131,6 +131,11 @@ public class MeetingCardFormTest extends ParentTest {
         solutionPage.enterTextInToFieldPointDueData("13.10.2022");
         solutionPage.chooseCheckBoxPointDeclarative();
         solutionPage.clickOnButtonSaveSolutionCard();
+        solutionPage.closeSolutionCard();
+        meetingsPage.openCreatedSolutionFromMeetingCard();
+        solutionPage.chooseSolutionTabInSolutionCard();
+        solutionPage.clickOnButtonStartVoiting();
+    //    solutionPage.clickOnButtonOkInPopUp();
 
 
 
