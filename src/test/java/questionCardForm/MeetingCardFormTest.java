@@ -112,45 +112,53 @@ public class MeetingCardFormTest extends ParentTest {
         meetingsPage.chooseMinutesDateForProtocol();
         meetingsPage.clickOnButtonSaveMeetingCard();
 
-        //
-        meetingsPage.clickOnStartMeetingButton();
-        meetingsPage.tabDocumentsInMeetingCard();
-        meetingsPage.clickOnButtonAddQuestionsToMeeting();
 
-        meetingsPage.chooseQuestionToPDforMeetingCard();
-        meetingsPage.clickOnButtonAddQuestionsFromList();
-        meetingsPage.clickOnButtonCreateSolutionOnMeetingCard();
+           checkExpectedResult(
+                          "StartMeetingButton is NOT present",
+                           meetingsPage.isStartMeetingButtonPresent()
+                  );
 
-        solutionPage.enterTextInToFieldCommentingTerm("13.10.2020");
-        solutionPage.chooseHoursCommentingTermInDD();
-        solutionPage.chooseMinutesCommentingTermInDD();
-        solutionPage.enterTextInToFieldMainSolutionText(" text rishennya");
-        solutionPage.clickOnButtonAddDicisionPoint();
-        solutionPage.enterTextInToFieldPointText(" punkt rishennya");
-        solutionPage.enterTextInToFieldResponsibleUsers("Марк Леон");
-        solutionPage.enterTextInToFieldPointDueData("13.10.2022");
-        solutionPage.chooseCheckBoxPointDeclarative();
-        solutionPage.clickOnButtonSaveSolutionCard();
-        solutionPage.closeSolutionCard();
-        meetingsPage.openCreatedSolutionFromMeetingCard();
-        solutionPage.chooseSolutionTabInSolutionCard();
-        solutionPage.clickOnButtonStartVoiting();
-        solutionPage.enterTextInToFieldVoitingTerm("13.10.2020");
-        solutionPage.chooseHoursInToFieldVoitingTermInDD();
-        solutionPage.chooseMinutesInToFieldVoitingTermInDD();
-        solutionPage.clickOnButtonSave();
+        // flow
+      //  meetingsPage.clickOnStartMeetingButton();
+      //  meetingsPage.tabDocumentsInMeetingCard();
+      //  meetingsPage.clickOnButtonAddQuestionsToMeeting();
+       // question Add in PD
+      //  meetingsPage.chooseQuestionToPDforMeetingCard();
+      //  meetingsPage.clickOnButtonAddQuestionsFromList();
+       // meetingsPage.clickOnButtonCreateSolutionOnMeetingCard();
+
+       // solutionPage.enterTextInToFieldCommentingTerm("13.10.2020");
+       // solutionPage.chooseHoursCommentingTermInDD();
+       // solutionPage.chooseMinutesCommentingTermInDD();
+       // solutionPage.enterTextInToFieldMainSolutionText(" text rishennya");
+       // solutionPage.clickOnButtonAddDicisionPoint();
+       // solutionPage.enterTextInToFieldPointText(" punkt rishennya");
+       // solutionPage.enterTextInToFieldResponsibleUsers("Марк Леон");
+       // solutionPage.enterTextInToFieldPointDueData("13.10.2022");
+       // solutionPage.chooseCheckBoxPointDeclarative();
+        //solutionPage.clickOnButtonSaveSolutionCard();
 
 
+       // solutionPage.closeSolutionCard();
+       // meetingsPage.openCreatedSolutionFromMeetingCard();
+       // solutionPage.chooseSolutionTabInSolutionCard();
+       // solutionPage.clickOnButtonStartVoiting();
+       // solutionPage.enterTextInToFieldVoitingTerm("13.10.2020");
+       // solutionPage.chooseHoursInToFieldVoitingTermInDD();
+       // solutionPage.chooseMinutesInToFieldVoitingTermInDD();
+       // solutionPage.clickOnButtonSave();
+
+        // voitingTasksCreated
+        // solutionPage.registraionByChairMan();
 
 
 
 
 
 
-        //   checkExpectedResult(
-       //                  "StartMeetingButton is NOT present",
-       //                   meetingsPage.isStartMeetingButtonPresent()
-        //          );
+
+
+
 
 
 

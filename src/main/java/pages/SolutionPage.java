@@ -197,4 +197,18 @@ public class SolutionPage extends ParentPage {
 
         actionsWithOurElements.clickOnElement(buttonSaveVoitingTerm);
     }
+//https://www.urlencoder.org/
+    //COMPETENCE\mark.leonLjrevtyn33 (двоеточие между логином и паролем не указываем, т.к. «:» будет инкодировано как «%3A». Доставим потом. Либо же по очереди инкодировать логин и пароль)
+   //competence\alla.sorokaLjrevtyn0   = competence%5Calla.sorokaLjrevtyn0
+
+    public void registraionByChairMan() {
+        webDriver.close();
+        try {
+            webDriver.get("https://competence%5Calla.soroka:Ljrevtyn0@ob-committees.ext5.lizard.net.ua/SitePages/Home.aspx");
+            System.out.println("Alla Soroka autorized");
+        }catch (Exception e) {
+            System.out.println("Can not open CommitteesPageAfterAutorization by Alla Soroka" + e);
+            Assert.fail("Can not open CommitteesPageAfterAutorization by Alla Soroka" + e);
+        }
+    }
 }

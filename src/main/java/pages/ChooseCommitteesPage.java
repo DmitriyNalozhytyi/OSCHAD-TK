@@ -39,6 +39,16 @@ public class ChooseCommitteesPage extends ParentPage {
         }
 
     }
+
+    public void openChooseCommitteesPageAfterAutorizationByChairMan() {
+        try {
+            webDriver.get("https://competence%5Calla.soroka:Ljrevtyn0@ob-committees.ext5.lizard.net.ua/SitePages/Home.aspx");
+            System.out.println("Alla Soroka autorized");
+        }catch (Exception e) {
+            System.out.println("Can not open CommitteesPageAfterAutorization by Alla Soroka" + e);
+            Assert.fail("Can not open CommitteesPageAfterAutorization by Alla Soroka" + e);
+        }
+    }
 }
 
 

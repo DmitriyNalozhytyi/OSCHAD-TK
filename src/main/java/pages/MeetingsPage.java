@@ -90,7 +90,15 @@ public class MeetingsPage extends ParentPage {
     private WebElement buttonOpenSolutiomFromMeetingCard;
 
 
+    @FindBy(className = "ms-commentexpand-iconouter")
+    private WebElement elementOpenOpenMeetingsList;
 
+
+    @FindBy(className = "ms-listlink")
+    private WebElement firstOpenMeeting;
+
+
+//ms-listlink ms-draggable
 
 
 
@@ -312,4 +320,11 @@ public class MeetingsPage extends ParentPage {
     }
 
 
+    public void openListOfOpenedMeetings() {
+        actionsWithOurElements.clickOnElement(elementOpenOpenMeetingsList);
+    }
+
+    public void openLastOpenMeeting() {
+        actionsWithOurElements.clickOnElement(firstOpenMeeting);
+    }
 }

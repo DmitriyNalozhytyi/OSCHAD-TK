@@ -13,10 +13,7 @@ import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.ChooseCommitteesPage;
-import pages.MeetingsPage;
-import pages.QuestionPage;
-import pages.SolutionPage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -32,6 +29,7 @@ public class ParentTest {
     protected QuestionPage questionPage;
     protected MeetingsPage meetingsPage;
     protected SolutionPage solutionPage;
+    protected OutlookPage outlookPage;
 
     @Before
     public void setUp(){
@@ -47,6 +45,7 @@ public class ParentTest {
         questionPage = new QuestionPage(webDriver);
         meetingsPage = new MeetingsPage(webDriver);
         solutionPage = new SolutionPage(webDriver);
+        outlookPage = new OutlookPage(webDriver);
     }
     @After
     public void tearDown(){
@@ -76,15 +75,15 @@ public class ParentTest {
             saveScreenshot(((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES));
         }
 
-    //    @Override
-    //            protected void finished(Description description) {
-        //            logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
-        //            try {
-         //               webDriver.quit();
-         //   } catch (Exception e) {
-        //       logger.error(e);
-        //    }
-     //   }
+        @Override
+                protected void finished(Description description) {
+                    logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
+                    try {
+                        webDriver.quit();
+            } catch (Exception e) {
+               logger.error(e);
+            }
+        }
     };
 
 
