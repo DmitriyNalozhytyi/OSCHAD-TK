@@ -134,6 +134,18 @@ public class SmokeTestFlow extends ParentTest {
         solutionPage.chooseCheckBoxPointDeclarative();
         solutionPage.clickOnButtonSaveSolutionCard();
 
+        solutionPage.closeSolutionCard();
+        meetingsPage.openCreatedSolutionFromMeetingCard();
+        solutionPage.chooseSolutionTabInSolutionCard();
+        solutionPage.clickOnButtonStartVoiting();
+        solutionPage.enterTextInToFieldVoitingTerm("13.10.2020");
+        solutionPage.chooseHoursInToFieldVoitingTermInDD();
+        solutionPage.chooseMinutesInToFieldVoitingTermInDD();
+        solutionPage.clickOnButtonSave();
+
+        // voitingTasksCreated
+     //   solutionPage.registraionByChairMan();
+
 
       //  meetingsPage.chooseQuestionToPDforMeetingCard();
 
@@ -141,6 +153,16 @@ public class SmokeTestFlow extends ParentTest {
        //         "StartFlow button is not present",
         //        questionPage.isStartFlowButtonPresent()
         //);
+
+    }
+
+    @Test
+    public void doVoitingTaskByChairMan (){
+        chooseCommitteesPage.openChooseCommitteesPageAfterAutorizationByChairMan();
+        chooseCommitteesPage.clickOnTK();
+        meetingsPage.openMeetingsPage();
+        meetingsPage.openListOfOpenedMeetings();
+        meetingsPage.openLastOpenMeeting();
 
     }
 
