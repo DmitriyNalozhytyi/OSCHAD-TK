@@ -53,6 +53,16 @@ public class SolutionPage extends ParentPage {
 
     @FindBy(id = "ctl00_ctl43_g_0841cb6b_d3f6_44d5_a123_a8518c724878_ctl00_toolBarTbl_RightRptControls_ctl00_ctl00_diidIOSaveItem")
     private WebElement buttonSaveVoitingTerm;
+
+
+    @FindBy(className = "ls-tasks-buttons")
+    private WebElement buttonYesInViotingTask;
+
+    @FindBy(id = "lsrte_LSCMTComments_ifr")
+    private WebElement fieldCommentsInVoitingTask;
+
+
+
     @Step
     public void openSolutionPage() {
         try {
@@ -196,6 +206,7 @@ public class SolutionPage extends ParentPage {
     public void clickOnButtonSave() {
 
         actionsWithOurElements.clickOnElement(buttonSaveVoitingTerm);
+        actionsWithOurElements.changeFrameWithWait(buttonSaveVoitingTerm);
     }
 //https://www.urlencoder.org/
     //COMPETENCE\mark.leonLjrevtyn33 (двоеточие между логином и паролем не указываем, т.к. «:» будет инкодировано как «%3A». Доставим потом. Либо же по очереди инкодировать логин и пароль)
@@ -209,6 +220,71 @@ public class SolutionPage extends ParentPage {
         }catch (Exception e) {
             System.out.println("Can not open CommitteesPageAfterAutorization by Alla Soroka" + e);
             Assert.fail("Can not open CommitteesPageAfterAutorization by Alla Soroka" + e);
+        }
+    }
+
+    public void chooseTasksTabInSolutionCard() {
+        actionsWithOurElements.changeFrameWithWait(buttonSaveSolutionCard);
+        List<WebElement> inactiveTabsOnMeetingCard = webDriver.findElements(By.className("inactive-tab"));
+
+        System.out.println(inactiveTabsOnMeetingCard.size() + " - number of tabs on Meeting Card");
+        if (inactiveTabsOnMeetingCard.size() > 0) {
+            inactiveTabsOnMeetingCard.get(inactiveTabsOnMeetingCard.size() - 3).click();
+            logger.info("tab Task in Solutin card  opened");
+        } else {
+            logger.info("!!! number of same elements '0'!!! ");
+
+        }
+
+    }
+
+    public void chooseTaskVoitingForChairMan() {
+
+        actionsWithOurElements.changeFrameWithWait(buttonSaveSolutionCard);
+        List<WebElement> inactiveTabsOnMeetingCard = webDriver.findElements(By.className("ls-tasks-link"));
+
+        System.out.println(inactiveTabsOnMeetingCard.size() + " - number Tasks of Voiting");
+        if (inactiveTabsOnMeetingCard.size() > 0) {
+            inactiveTabsOnMeetingCard.get(inactiveTabsOnMeetingCard.size() - 1).click();
+            logger.info("task voiting chairman opened");
+        } else {
+            logger.info("!!! number of same elements '0'!!! ");
+
+        }
+
+    }
+
+    public void chooseYesVoitingTask() {
+        actionsWithOurElements.changeFrameWithWait(buttonSaveSolutionCard);
+     //   List<WebElement> inactiveTabsOnMeetingCard = webDriver.findElements(By.className("ls-tasks-buttons"));
+
+       // System.out.println(inactiveTabsOnMeetingCard.size() + " - number buttons in voiting task");
+       // if (inactiveTabsOnMeetingCard.size() > 0) {
+        //    inactiveTabsOnMeetingCard.get(inactiveTabsOnMeetingCard.size() - 2).click();
+        //    logger.info("task voiting chairman 'yes' compleated ");
+        //} else {
+         //   logger.info("!!! number of same elements '0'!!! ");
+        actionsWithOurElements.clickOnElement(buttonYesInViotingTask);
+
+        }
+
+
+    public void enterTextInToFieldCommentsInVoitingTast(String fieldText) {
+        actionsWithOurElements.changeFrameWithWait(buttonYesInViotingTask);
+        actionsWithOurElements.enterTextInToElement(fieldCommentsInVoitingTask, fieldText);
+    }
+
+    public void chooseTaskVoitingForMember() {
+        actionsWithOurElements.changeFrameWithWait(buttonSaveSolutionCard);
+        List<WebElement> inactiveTabsOnMeetingCard = webDriver.findElements(By.className("ls-tasks-link"));
+
+        System.out.println(inactiveTabsOnMeetingCard.size() + " - number Tasks of Voiting");
+        if (inactiveTabsOnMeetingCard.size() > 0) {
+            inactiveTabsOnMeetingCard.get(inactiveTabsOnMeetingCard.size() - 2).click();
+            logger.info("task voiting chairman opened");
+        } else {
+            logger.info("!!! number of same elements '0'!!! ");
+
         }
     }
 }

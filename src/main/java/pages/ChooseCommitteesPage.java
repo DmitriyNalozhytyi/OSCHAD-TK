@@ -49,6 +49,16 @@ public class ChooseCommitteesPage extends ParentPage {
             Assert.fail("Can not open CommitteesPageAfterAutorization by Alla Soroka" + e);
         }
     }
+
+    public void openChooseCommitteesPageAfterAutorizationByMember() {
+        try {
+            webDriver.get("https://competence%5Canton.dub:Ljrevtyn0@ob-committees.ext5.lizard.net.ua/SitePages/Home.aspx");
+            System.out.println("Anton Dub autorized");
+        }catch (Exception e) {
+            System.out.println("Can not open CommitteesPageAfterAutorization by Anton Dub" + e);
+            Assert.fail("Can not open CommitteesPageAfterAutorization by Anton Dub" + e);
+        }
+    }
 }
 
 

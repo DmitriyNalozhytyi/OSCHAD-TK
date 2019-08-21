@@ -1,4 +1,4 @@
-package questionCardForm;
+package сardFormsTest;
 
 import org.junit.Test;
 import parentTest.ParentTest;

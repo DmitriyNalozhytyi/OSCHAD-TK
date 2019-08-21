@@ -97,6 +97,9 @@ public class MeetingsPage extends ParentPage {
     @FindBy(className = "ms-listlink")
     private WebElement firstOpenMeeting;
 
+    @FindBy(id = "startTasksForImplementation")
+    private WebElement buttonStartTasksForImplementation;
+
 
 //ms-listlink ms-draggable
 
@@ -326,5 +329,11 @@ public class MeetingsPage extends ParentPage {
 
     public void openLastOpenMeeting() {
         actionsWithOurElements.clickOnElement(firstOpenMeeting);
+    }
+
+    public void clickOnButtonStartTasksForImplementation() {
+        actionsWithOurElements.changeFrameWithWait(buttonStartTasksForImplementation);
+        actionsWithOurElements.clickOnElement(buttonStartTasksForImplementation);
+     //   webDriver.switchTo().alert().accept();
     }
 }
