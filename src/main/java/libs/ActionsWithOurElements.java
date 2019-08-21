@@ -175,6 +175,8 @@ public class ActionsWithOurElements {
         }
     }
 
+
+
 }
    // public void clickOnElement(WebElement element) {
    //     try {
@@ -185,3 +187,6 @@ public class ActionsWithOurElements {
    //         System.out.println("Can't click on Element");
     //        printErrorAndStopTest(e);
   //      }
+
+
+

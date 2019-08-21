@@ -1,4 +1,4 @@
-package questionCardForm;
+package сardFormsTest;
 
 import libs.SpreadsheetData;
 import org.junit.Test;

@@ -7,7 +7,7 @@
    @on desktop
       lambda_logo:
          visible
-         image  file    lambdatestlogo.png,     error 25px
+         image  file    lambdatestlogo.png,     error 24px
 
       start_testing:
          css    font-size   is  "14px"

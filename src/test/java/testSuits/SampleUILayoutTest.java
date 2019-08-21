@@ -1,33 +1,38 @@
-package testsuits;
+package testSuits;
 
-/*import com.galenframework.api.Galen;
-import com.galenframework.reports.GalenTestInfo;
-import com.galenframework.reports.HtmlReportBuilder;
-import com.galenframework.reports.model.LayoutReport;
+//import com.galenframework.api.Galen;
+//import com.galenframework.reports.GalenTestInfo;
+//import com.galenframework.reports.HtmlReportBuilder;
+//import com.galenframework.reports.model.LayoutReport;
 
+import org.junit.AfterClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import parentTest.ParentTest;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+
+//
+
+//import org.testng.annotations.AfterClass;
+//import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.Test;
 
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
-*/import java.util.List;
+import java.util.List;
 
 
 // need extance ParentTest
     public class SampleUILayoutTest  {
-/*        private static final String lambdaTestpage = "src/resourses/specs/lambdatest.gspec";
+        private static final String lambdaTestpage = "src/resourses/specs/lambdatest.gspec";
         private static final String baseURL = "https://www.lambdatest.com/";
         private WebDriver webDriver;
-        private LayoutReport layoutReport;
+  //
+  //        private LayoutReport layoutReport;
 
         /* initialize webdriver, make sure you download chrome driver in http://chromedriver.chromium.org/downloads
         and drop the exe file under resources folder
@@ -70,11 +75,12 @@ import java.util.LinkedList;
         public void tearDown() {
             //Close and Quit the driver.
             webDriver.quit();
-        }
-
+       }
 */
-    }
 
+}
+
+//need to add in pom:
 
 /* dependancy:
 

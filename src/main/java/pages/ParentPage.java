@@ -21,6 +21,10 @@ public class ParentPage {
 
     }
 
+    public void exitTest() {
+        webDriver.quit();
+    }
+
 
 }
 

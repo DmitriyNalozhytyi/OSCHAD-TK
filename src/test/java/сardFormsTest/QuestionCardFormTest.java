@@ -1,6 +1,5 @@
-package questionCardForm;
+package сardFormsTest;
 
-import libs.ExcelDriver;
 import libs.SpreadsheetData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,9 +9,7 @@ import parentTest.ParentTest;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Map;
 
 @RunWith(Parameterized.class)
 

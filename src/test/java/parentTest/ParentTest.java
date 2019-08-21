@@ -30,6 +30,7 @@ public class ParentTest {
     protected MeetingsPage meetingsPage;
     protected SolutionPage solutionPage;
     protected OutlookPage outlookPage;
+    protected ParentPage parentPage;
 
     @Before
     public void setUp(){
@@ -46,6 +47,7 @@ public class ParentTest {
         meetingsPage = new MeetingsPage(webDriver);
         solutionPage = new SolutionPage(webDriver);
         outlookPage = new OutlookPage(webDriver);
+        parentPage = new ParentPage(webDriver);
     }
     @After
     public void tearDown(){
@@ -84,6 +86,8 @@ public class ParentTest {
                logger.error(e);
             }
         }
+
+
     };
 
 
