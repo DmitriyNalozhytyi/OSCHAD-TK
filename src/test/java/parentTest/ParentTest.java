@@ -1,6 +1,5 @@
 package parentTest;
 
-import chooseCommitteesTest.ChooseCommitteesTest;
 import io.qameta.allure.Attachment;
 import libs.ConfigProperties;
 import org.aeonbits.owner.ConfigFactory;
@@ -32,6 +31,7 @@ public class ParentTest {
     protected OutlookPage outlookPage;
     protected ParentPage parentPage;
 
+
     @Before
     public void setUp(){
         File file = new File("./src/drivers/chromedriver.exe");
@@ -48,6 +48,7 @@ public class ParentTest {
         solutionPage = new SolutionPage(webDriver);
         outlookPage = new OutlookPage(webDriver);
         parentPage = new ParentPage(webDriver);
+
     }
     @After
     public void tearDown(){
@@ -77,7 +78,7 @@ public class ParentTest {
             saveScreenshot(((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES));
         }
 
-        @Override
+       @Override
                 protected void finished(Description description) {
                     logger.info(String.format("Finished test: %s::%s", description.getClassName(), description.getMethodName()));
                     try {
