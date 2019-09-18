@@ -17,7 +17,7 @@ import solutionPageTestFlow.DoSolutionVoiceTaskByMember;
         DoSolutionVoiceTaskByMember.class,
         DoSolutionVoiceTaskByChairMan.class,
         MeetingTestFlowAfterVoiting.class,
-        AutorizationOutlook.class
+   //     AutorizationOutlook.class
 
 
 

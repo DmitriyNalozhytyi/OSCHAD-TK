@@ -19,6 +19,7 @@ public class AutorizationOutlook extends ParentTest {
         outlookPage.clickOnButtonOnOnAutorizationForm();
         outlookPage.clickOnButtonOkQuiteFromSystem();
         outlookPage.chooseCurrentMail();
+
       //  outlookPage.openLink();
     }
 
