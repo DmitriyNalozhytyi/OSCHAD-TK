@@ -1,28 +1,89 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--В самом верху документа указывается что это xml документ,
+его версия и кодировка: <?xml version=»1.0″ encoding=»UTF-8″?>-->
+
+<!--Далее идет тег project. В него уже и будут помещаться
+все остальные теги, которые Вы будете создавать.-->
+
+
+<!-- pom - конфигуратор проекта-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
+
+
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>TK_oschadbank</groupId>
+
+<!--Информация по Вашему проекту (обязательная, необходима Maven-у):
+1)groupId (имена и структура пакетов),
+2) artifactId (название проекта),
+(В Maven каждый проект идентифицируется парой groupId artifactId.
+Во избежание конфликта имён, groupId - наименование организации или подразделения
+и обычно действуют такие же правила как и при именовании пакетов в Java -
+записывают доменное имя организации или сайта проекта. artifactId - название проекта.)
+
+3)version (версия вашего приложения),
+
+
+Если состояние кода для проекта не зафиксировано, то в конце к имени версии добавляется
+"-SNAPSHOT" что обозначает, что версия в разработке и результирующий jar файл может меняться-->
+
+
+    <groupId>LS</groupId>
     <artifactId>TK_oschadbank</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!--Также добавляется информация, которая не используется самим мавеном,
+     но нужна для программиста, чтобы понять, о чём этот проект:
+    1)name -  имя  Вашего проекта( для человека)
+    2)description - Описание проекта
+    3)url - сайт проекта.-->
+
     <name>TK_oschadbank</name>
     <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <url>ob-committees.ext5.lizard.net.ua</url>
 
 
+    <!--Maven — инструмент для сборки джава проектов. Помимо подключения сторонних
+    библиотек он используется для компиляции, создания jar,
+    создания дистрибутива программы, генерации документации. -->
+
+
+    <!--В тег properties можно добавлять так называемые свойства. -->
 
     <properties>
+
+
+        <!--
+
+        2)3)Для использования возможности языка Java 7 ( -source 1.7 ),
+        а также хотите, чтобы скомпилированные классы были совместимы
+        с JVM 1.7 ( -target 1.7 ),  добавляем два следующих свойства,
+        которые являются свойством по умолчанию. имена для параметров плагина:-->
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <aspectj.version>1.8.9</aspectj.version>
         <compiler.version>1.7</compiler.version>
+
+
     </properties>
 
-    <!-- JUnit  — это фреймворк автоматического тестирования  кода-->
+
+
+    <!--Далее идет тег dependencies — в него помещаются все зависимости проекта:
+библиотеки, фреймворки, модули, другие проекты.-->
+
+
+    <!-- JUnit  — это фреймворк автоматического тестирования  кода
+    необходим для запуска тестов
+
+    также, если бы было еще указано <scope>test<scope> -
+    junit быд бы виден только в package test-->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -31,7 +92,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
-        <!-- встроить сервер Selenium в свой собственный проект -->
+        <!-- встроить сервер Selenium в проект -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
@@ -84,11 +145,20 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <!--MySQL java connector-->
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.18</version>
         </dependency>
+
+
+        <!--Подключение к проекту с автотестами адаптера для получение информации о выполнении автотеста,
+        из которой потом будет сформирован информативный Allure–отчет.
+        Данный адаптер позволяет собирать информацию из тестов, разработанных с использованием фреймворка Junit4.  -->
+
+
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
@@ -98,17 +168,16 @@
 
 
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <!--Gson - это библиотека Java с открытым исходным кодом,
+        которая может быть использована для преобразования объектов Java
+        в их представление JSON. Его также можно использовать для преобразования
+        строки JSON в эквивалентный объект Java.-->
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
-
-
-
-
-
-
 
 
 
@@ -156,6 +225,16 @@
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
+
+
+                <!--данній плагин для подключения  зависимости, указанной выше:
+
+                <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.0-BETA13</version>
+            </dependency>
+                -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
