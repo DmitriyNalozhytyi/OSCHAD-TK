@@ -8,7 +8,7 @@ public class ChooseCommitteesTest extends ParentTest {
     @Test
     public void validLogin(){
         chooseCommitteesPage.openChooseCommitteesPageAfterAutorization();
-        chooseCommitteesPage.clickOnTK();
+          chooseCommitteesPage.clickOnTK();
         questionPage.clickOnButtonCreateQuestion();
 
     }

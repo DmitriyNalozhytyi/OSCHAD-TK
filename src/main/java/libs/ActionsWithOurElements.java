@@ -28,7 +28,7 @@ public class ActionsWithOurElements {
     public void enterTextInToElement(WebElement element, String text) {
         try {
             element.sendKeys(text);
-            logger.info(text + "was input into element");
+            logger.info(text + " was input into element");
             //System.out.println(text + "was input into element");
         } catch (Exception e) {
             System.out.println("Can't enter text in to field" + e);
@@ -152,12 +152,13 @@ public class ActionsWithOurElements {
     }
 
 
-
+// 14 less - 10 page
     public boolean isElementPresent(WebElement webElement) {
         try {
             boolean isDisplayed = webElement.isDisplayed();
             logger.info("Element is displayed -->" + isDisplayed);
             return webElement.isDisplayed();
+            //return isDisplayed;
         } catch (Exception e) {
             logger.info("Element is displayed --> false");
             return false;

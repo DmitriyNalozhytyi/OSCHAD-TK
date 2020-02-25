@@ -19,7 +19,7 @@ public class MeetingsPage extends ParentPage {
     }
 
 
-
+     // 4.	Все элементы страницы принадлежат только ей! Поэтому они должны быть private
     @FindBy(xpath = ".//*[@id='createNewItem']")
     private WebElement createMeetingCardButton;
 
