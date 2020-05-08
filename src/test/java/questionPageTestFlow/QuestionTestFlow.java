@@ -8,6 +8,10 @@ import parentTest.ParentTest;
 import java.util.Arrays;
 import java.util.Collection;
 
+
+//Указываем аннотацию @RunWith (инструмент, которій будет подставлять в переменные разные данные и запускать блок @Test с этими данными) -
+// Скажем junit-y , что данный класс LoginWithParams, в котором написан этот тест нужно запускать с параметрами
+
 @RunWith(Parameterized.class)
 
 public class QuestionTestFlow extends ParentTest {
@@ -19,6 +23,9 @@ public class QuestionTestFlow extends ParentTest {
         this.titleField = titleField;
         this.shortContent = shortContent;
     }
+
+    //здесь аннотация @Parameterized.Parameters говорит о том, что дальше будет идти метод, который будет генерить эти тестовые данные)
+    //(Collection, массив Arrays.asList (new Object [] [] {}))
 
     @Parameterized.Parameters
     public static Collection testData() {

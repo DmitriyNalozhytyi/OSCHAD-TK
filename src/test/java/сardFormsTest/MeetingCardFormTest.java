@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
 
+//Указываем аннотацию @RunWith (инструмент, которій будет подставлять в переменные разные данные и запускать блок @Test с этими данными) -
+// Скажем junit-y , что данный класс LoginWithParams, в котором написан этот тест нужно запускать с параметрами
 
 @RunWith(Parameterized.class)
 
@@ -58,6 +60,10 @@ public class MeetingCardFormTest extends ParentTest {
         this.dateForProtocol = dateForProtocol;
 
     }
+
+
+    //@Parameterized.Parameters говорит о том, что дальше будет идти метод, который будет генерить эти тестовые данные)
+// (Collection, массив Arrays.asList (new Object [] [] {}))
 
     @Parameterized.Parameters(name = "Parameters are {0} and {1} and {2} and {3} and {4} and {5} and {6} ")
 
@@ -112,7 +118,7 @@ public class MeetingCardFormTest extends ParentTest {
         meetingsPage.chooseMinutesDateForProtocol();
         meetingsPage.clickOnButtonSaveMeetingCard();
 
-
+// lesson 12 p.32
            checkExpectedResult(
                           "StartMeetingButton is NOT present",
                            meetingsPage.isStartMeetingButtonPresent()
@@ -131,12 +137,12 @@ public class MeetingCardFormTest extends ParentTest {
        // solutionPage.chooseHoursCommentingTermInDD();
        // solutionPage.chooseMinutesCommentingTermInDD();
        // solutionPage.enterTextInToFieldMainSolutionText(" text rishennya");
-       // solutionPage.clickOnButtonAddDicisionPoint();
-       // solutionPage.enterTextInToFieldPointText(" punkt rishennya");
-       // solutionPage.enterTextInToFieldResponsibleUsers("Марк Леон");
-       // solutionPage.enterTextInToFieldPointDueData("13.10.2022");
-       // solutionPage.chooseCheckBoxPointDeclarative();
-        //solutionPage.clickOnButtonSaveSolutionCard();
+        //       // solutionPage.clickOnButtonAddDicisionPoint();
+        //       // solutionPage.enterTextInToFieldPointText(" punkt rishennya");
+        //       // solutionPage.enterTextInToFieldResponsibleUsers("Марк Леон");
+        //       // solutionPage.enterTextInToFieldPointDueData("13.10.2022");
+        //       // solutionPage.chooseCheckBoxPointDeclarative();
+        //        //solutionPage.clickOnButtonSaveSolutionCard();
 
 
        // solutionPage.closeSolutionCard();

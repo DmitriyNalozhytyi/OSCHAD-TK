@@ -16,6 +16,9 @@ import java.util.List;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
+
+    // выбираем: Logger (org.apache.log4j)
+    // создаем объект, который будет писать нам лог
     Logger logger = Logger.getLogger(getClass());
 
     public ActionsWithOurElements(WebDriver webDriver) {
@@ -28,7 +31,7 @@ public class ActionsWithOurElements {
     public void enterTextInToElement(WebElement element, String text) {
         try {
             element.sendKeys(text);
-            logger.info(text + "was input into element");
+            logger.info(text + " was input into element");
             //System.out.println(text + "was input into element");
         } catch (Exception e) {
             System.out.println("Can't enter text in to field" + e);
@@ -40,6 +43,7 @@ public class ActionsWithOurElements {
         logger.info("Can't work with element" + e);
         //System.out.println("Can't work with element" + e);
         Assert.fail("Can't work with element" + e);
+        // Assert.fail - безусловная остановка теста
     }
 
     public void clickOnElement(WebElement element) {
@@ -152,12 +156,13 @@ public class ActionsWithOurElements {
     }
 
 
-
+// 14 less - 10 page
     public boolean isElementPresent(WebElement webElement) {
         try {
             boolean isDisplayed = webElement.isDisplayed();
             logger.info("Element is displayed -->" + isDisplayed);
             return webElement.isDisplayed();
+            //return isDisplayed;
         } catch (Exception e) {
             logger.info("Element is displayed --> false");
             return false;

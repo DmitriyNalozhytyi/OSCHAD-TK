@@ -9,6 +9,10 @@ import questionPageTestFlow.QuestionTestFlow;
 import solutionPageTestFlow.DoSolutionVoiceTaskByChairMan;
 import solutionPageTestFlow.DoSolutionVoiceTaskByMember;
 
+
+//(«@RunWith(Suite.class)» (аннотация для запуска тестов из определенных классов) «@Suite.SuiteClasses»
+// ( аннатоция для перечисление классов, которе необходимо ранить))
+
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 

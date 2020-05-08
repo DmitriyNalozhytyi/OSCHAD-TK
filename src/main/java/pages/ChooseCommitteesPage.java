@@ -18,10 +18,21 @@ public class ChooseCommitteesPage extends ParentPage {
 
 
 @Step
+  //  public void openChooseCommitteesPageAfterAutorization(){
+    //    try {
+      //      webDriver.get("https://COMPETENCE%5Cmark.leon:Ljrevtyn33@ob-committees.ext5.lizard.net.ua/SitePages/Home.aspx");
+        //    System.out.println("CommitteesPageAfterAutorization was opened");
+       // }catch (Exception e) {
+         //   System.out.println("Can not open CommitteesPageAfterAutorization" + e);
+         //   Assert.fail("Can not open CommitteesPageAfterAutorization" + e);
+       // }
+    //}
+
     public void openChooseCommitteesPageAfterAutorization(){
         try {
             webDriver.get("https://COMPETENCE%5Cmark.leon:Ljrevtyn33@ob-committees.ext5.lizard.net.ua/SitePages/Home.aspx");
-            System.out.println("CommitteesPageAfterAutorization was opened");
+
+             System.out.println("CommitteesPageAfterAutorization was opened");
         }catch (Exception e) {
             System.out.println("Can not open CommitteesPageAfterAutorization" + e);
             Assert.fail("Can not open CommitteesPageAfterAutorization" + e);
