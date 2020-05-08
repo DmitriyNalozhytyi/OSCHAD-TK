@@ -11,6 +11,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
+// прокидываение драйвера: 5) во всех пейджан необходимо написать конструктор, который:
+// - получит на вход webDriver ( public QuestionPage(WebDriver webDriver))
+// - и передаст его в родительский класс (ParentPage) через конструкцию (super(webDriver)) и запишет там (в ParentPage)  в локальную переменную
+// топаем в ParentPage
 
 public class QuestionPage extends ParentPage {
     public QuestionPage(WebDriver webDriver) {
@@ -19,7 +23,8 @@ public class QuestionPage extends ParentPage {
 
 
 
-
+// аннотация  @FindBy необходима для объявления объектов.
+  //  но чтобы инициализировать - нужно дать команду Селениуму (команда PageFactory ParentPage)
 
     @FindBy(xpath = ".//*[@id='createNewItem']")
     private WebElement createQuestionCardButton;

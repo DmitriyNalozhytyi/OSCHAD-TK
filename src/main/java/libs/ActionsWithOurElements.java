@@ -16,6 +16,9 @@ import java.util.List;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
+
+    // выбираем: Logger (org.apache.log4j)
+    // создаем объект, который будет писать нам лог
     Logger logger = Logger.getLogger(getClass());
 
     public ActionsWithOurElements(WebDriver webDriver) {
@@ -40,6 +43,7 @@ public class ActionsWithOurElements {
         logger.info("Can't work with element" + e);
         //System.out.println("Can't work with element" + e);
         Assert.fail("Can't work with element" + e);
+        // Assert.fail - безусловная остановка теста
     }
 
     public void clickOnElement(WebElement element) {

@@ -1,23 +1,25 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- файл pom - конфигуратор проекта-->
+
 <!--В самом верху документа указывается что это xml документ,
 его версия и кодировка: <?xml version=»1.0″ encoding=»UTF-8″?>-->
 
 <!--Далее идет тег project. В него уже и будут помещаться
 все остальные теги, которые Вы будете создавать.-->
 
+<!--Корневой элемент и заголовок:-->
 
-<!-- pom - конфигуратор проекта-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
 
 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<!--Информация по Вашему проекту (обязательная, необходима Maven-у)(В Maven каждый проект идентифицируется парой groupId, artifactId.):
+В репозитории проект выглядит следующим образом: groupId:artifactId:version.
 
-
-<!--Информация по Вашему проекту (обязательная, необходима Maven-у):
 1)groupId (имена и структура пакетов),
 2) artifactId (название проекта),
 (В Maven каждый проект идентифицируется парой groupId artifactId.
@@ -27,12 +29,10 @@
 
 3)version (версия вашего приложения),
 
-
 Если состояние кода для проекта не зафиксировано, то в конце к имени версии добавляется
 "-SNAPSHOT" что обозначает, что версия в разработке и результирующий jar файл может меняться-->
 
-
-    <groupId>LS</groupId>
+    <groupId>TK_oschadbank</groupId>
     <artifactId>TK_oschadbank</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -46,19 +46,15 @@
     <!-- FIXME change it to the project's website -->
     <url>ob-committees.ext5.lizard.net.ua</url>
 
-
     <!--Maven — инструмент для сборки джава проектов. Помимо подключения сторонних
     библиотек он используется для компиляции, создания jar,
     создания дистрибутива программы, генерации документации. -->
-
 
     <!--В тег properties можно добавлять так называемые свойства. -->
 
     <properties>
 
-
         <!--
-
         2)3)Для использования возможности языка Java 7 ( -source 1.7 ),
         а также хотите, чтобы скомпилированные классы были совместимы
         с JVM 1.7 ( -target 1.7 ),  добавляем два следующих свойства,
@@ -73,26 +69,36 @@
 
     </properties>
 
-
-
     <!--Далее идет тег dependencies — в него помещаются все зависимости проекта:
-библиотеки, фреймворки, модули, другие проекты.-->
-
+    библиотеки, фреймворки, модули, другие проекты.-->
 
     <!-- JUnit  — это фреймворк автоматического тестирования  кода
-    необходим для запуска тестов
+    необходим для запуска тестов (помощник для запуска тестов)
 
-    также, если бы было еще указано <scope>test<scope> -
-    junit быд бы виден только в package test-->
+    также, в строчке <scope>test<scope>  указана область видимости junit-а
+    - виден только в package test, а нам необходимо, чтобы он был виден отовсюду - удаляем строчку -->
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
+            <!-- <scope>test</scope>, тут удаляем строчку-->
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
-        <!-- встроить сервер Selenium в проект -->
+        <!-- maven driver dependency - Selenium Server -->
+
+        <!-- встроить сервер Selenium в проект: Selenium Server – это сервер, который позволяет управлять браузером с удалённой
+        машины, по сети. Сначала на той машине, где должен работать браузер, устанавливается и запускается сервер.
+        Затем на другой машине (технически можно и на той же самой, конечно) запускается программа,
+        которая, используя специальный драйвер RemoteWebDriver, соединяется с сервером и отправляет ему команды.
+        Он в свою очередь запускает браузер и выполняет в нём эти команды, используя драйвер, соответствующий этому браузеру -->
+
+        <!-- После подключение Selenium к проекту -  закидываем вебдрайвер (chromedriver.exe)
+         в папку drivers и создаем объект webDriver, который будет обращаться к chromedriver.exe) - это
+          необходимо для подвязки Java с "chromedriver.exe"-->
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
@@ -124,9 +130,8 @@
             <version>20180130</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/org.aeonbits.owner/owner -->
-        <!--  библиотека для работы с properties.-->
+        <!--  библиотека для работы с .properties-->
 
         <dependency>
             <groupId>org.aeonbits.owner</groupId>
@@ -136,7 +141,8 @@
 
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-        <!--Apache POI — это библиотека на языке Java для чтения и записи документов Microsoft Office, таких как Excel, PowerPoint и Word.-->
+        <!--Apache POI — это библиотека на языке Java для чтения и записи документов Microsoft Office, таких как Excel,
+        PowerPoint и Word.-->
 
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -153,19 +159,15 @@
             <version>5.1.18</version>
         </dependency>
 
-
         <!--Подключение к проекту с автотестами адаптера для получение информации о выполнении автотеста,
         из которой потом будет сформирован информативный Allure–отчет.
         Данный адаптер позволяет собирать информацию из тестов, разработанных с использованием фреймворка Junit4.  -->
-
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
             <version>2.0-BETA13</version>
         </dependency>
-
-
 
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <!--Gson - это библиотека Java с открытым исходным кодом,
@@ -178,8 +180,6 @@
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
-
-
 
     </dependencies>
 
